@@ -1,7 +1,7 @@
 export const projects = [
   {
-    slug: 'anvesak',
-    title: 'ANVESAK',
+    slug: 'anvesak-I',
+    title: 'ANVESAK-I',
     shortDesc: 'Unmanned Surface Vehicle for river bathymetry and mapping using SONAR and LiDAR to generate 3D maps.',
     tags: ['USV/Robotics', 'SONAR', 'LiDAR', 'ROS'],
     category: 'USV/Robotics',
