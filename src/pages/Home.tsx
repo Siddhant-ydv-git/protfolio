@@ -1,0 +1,222 @@
+import { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import { useReveal, SectionLabel, SectionTitle, Divider, PlaceholderImage, Tag, TechPill, Card } from '../components/Shared';
+import { projects, testimonials } from '../data/portfolio';
+
+const typingWords = ['Engineer', 'Maker', 'Researcher', 'Explorer'];
+
+function TypingText() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = typingWords[wordIndex];
+    const speed = isDeleting ? 50 : 100;
+    const timeout = setTimeout(() => {
+      if (!isDeleting && charIndex === word.length) {
+        setTimeout(() => setIsDeleting(true), 1800);
+        return;
+      }
+      if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % typingWords.length);
+        return;
+      }
+      setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
+    }, speed);
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, wordIndex]);
+
+  return (
+    <span>
+      {typingWords[wordIndex].substring(0, charIndex)}
+      <span className="typing-cursor" />
+    </span>
+  );
+}
+
+function HighlightsStrip() {
+  const ref = useReveal();
+  const items = [
+    { label: 'Projects', value: '5+', path: '/projects' },
+    { label: 'Publications', value: '2', path: '/publications' },
+    { label: 'Awards', value: '6+', path: '/about' },
+  ];
+  return (
+    <div ref={ref} className="reveal grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+      {items.map((item) => (
+        <Link key={item.label} to={item.path} className="text-center p-6 rounded-xl glass-card glass-hover transition-all duration-300 group">
+          <div className="text-3xl font-bold mb-1 gradient-text" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>{item.value}</div>
+          <div className="text-sm text-[#64748b] group-hover:text-[#1a1a2e] transition-colors">{item.label}</div>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+function FeaturedProject() {
+  const ref = useReveal();
+  const project = projects[0];
+  return (
+    <div ref={ref} className="reveal max-w-4xl mx-auto">
+      <SectionLabel>Featured Project</SectionLabel>
+      <SectionTitle>ANVESAK</SectionTitle>
+      <Divider />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <PlaceholderImage label="ANVESAK USV" className="h-64" />
+        <div className="flex flex-col justify-center">
+          <Tag>USV/Robotics</Tag>
+          <p className="text-[#64748b] mt-3 mb-4 leading-relaxed">{project.shortDesc}</p>
+          <div className="flex flex-wrap gap-2 mb-5">
+            {project.tags.map((t) => <TechPill key={t}>{t}</TechPill>)}
+          </div>
+          <Link to="/projects/anvesak" className="inline-flex items-center gap-2 text-sm font-medium gradient-text hover:underline">
+            View Details <span className="text-lg">&rarr;</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RecentExperience() {
+  const ref = useReveal();
+  const experiences = [
+    { date: '2025 – Present', role: 'Management Trainee', org: 'Gorkha Brewery Pvt. Ltd. | Part of Carlsberg Group', location: 'Mukundapur, Nawalparasi, Nepal' },
+    { date: '2023 – 2024', role: 'NAST Intern', org: 'Nepal Academy of Science & Technology', location: 'Khumaltal, Lalitpur, Nepal' },
+    { date: '2022 – 2023', role: 'HVAC Intern', org: 'Thermopharm Engineering', location: 'East Vasai, Mumbai, India' },
+  ];
+  return (
+    <div ref={ref} className="reveal max-w-4xl mx-auto">
+      <SectionLabel>Recent Experience</SectionLabel>
+      <SectionTitle>Where I've Been</SectionTitle>
+      <Divider />
+      <div className="relative pl-8">
+        <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-gradient-to-b from-[#ff6b5b] to-[#14b8a6]" />
+        {experiences.map((exp, i) => (
+          <div key={i} className="relative pb-6 last:pb-0">
+            <div className="absolute -left-8 top-1.5 w-3 h-3 rounded-full bg-gradient-to-br from-[#ff6b5b] to-[#14b8a6] -translate-x-[5px]" />
+            <p className="font-mono text-xs gradient-text mb-1" style={{ fontFamily: 'Space Grotesk, monospace' }}>{exp.date}</p>
+            <h4 className="text-base font-semibold text-[#1a1a2e]">{exp.role}</h4>
+            <p className="text-sm text-[#64748b]">{exp.org}</p>
+            <p className="text-xs text-[#94a3b8] mt-0.5">{exp.location}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TestimonialsCarousel() {
+  const [current, setCurrent] = useState(0);
+  const ref = useReveal();
+
+  const next = useCallback(() => setCurrent((c) => (c + 1) % testimonials.length), []);
+
+  useEffect(() => {
+    const interval = setInterval(next, 5000);
+    return () => clearInterval(interval);
+  }, [next]);
+
+  return (
+    <div ref={ref} className="reveal max-w-3xl mx-auto text-center">
+      <SectionLabel>Testimonials</SectionLabel>
+      <SectionTitle>What People Say</SectionTitle>
+      <Divider />
+      <div className="relative overflow-hidden">
+        <div className="carousel-track" style={{ transform: `translateX(-${current * 100}%)` }}>
+          {testimonials.map((t, i) => (
+            <div key={i} className="min-w-full px-4">
+              <blockquote className="text-lg text-[#64748b] leading-relaxed mb-4 italic">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <p className="text-sm font-semibold text-[#1a1a2e]">{t.name}</p>
+              <p className="text-xs text-[#64748b]">{t.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center gap-2 mt-6">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-gradient-to-r from-[#ff6b5b] to-[#14b8a6] w-6' : 'bg-[#e2e8f0]'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden">
+        <div className="sonar-container">
+          <div className="sonar-ring" />
+          <div className="sonar-ring" />
+          <div className="sonar-ring" />
+          <div className="sonar-ring" />
+          <div className="sonar-ring" />
+        </div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="blob w-[500px] h-[500px] bg-[#ff6b5b] top-20 -right-40 opacity-30" />
+          <div className="blob w-[400px] h-[400px] bg-[#14b8a6] bottom-20 -left-20 opacity-30" style={{ animationDelay: '-4s' }} />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto w-full">
+          <p className="font-mono text-sm gradient-text mb-4 opacity-0 animate-[fadeUp_0.8s_0.3s_forwards]" style={{ fontFamily: 'Space Grotesk, monospace' }}>
+            Hello, I&apos;m
+          </p>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 opacity-0 animate-[fadeUp_0.8s_0.5s_forwards] text-[#1a1a2e]" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+            Siddhant <span className="gradient-text">Yadav</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-[#64748b] mb-2 opacity-0 animate-[fadeUp_0.8s_0.7s_forwards]">
+            <TypingText />
+          </p>
+          <p className="text-base text-[#64748b] mb-8 opacity-0 animate-[fadeUp_0.8s_0.8s_forwards]">
+            Mechanical Engineering · Unmanned Systems · Space & Robotics
+          </p>
+          <div className="flex gap-4 opacity-0 animate-[fadeUp_0.8s_0.9s_forwards]">
+            <Link to="/projects" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-[#ff6b5b] to-[#14b8a6] text-white hover:shadow-[0_8px_24px_rgba(255,107,91,0.25)] transition-all duration-300 btn-ripple hover:scale-[1.02]">
+              View My Work
+            </Link>
+            <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium glass-card text-[#1a1a2e] hover:border-[#ff6b5b] transition-all duration-300">
+              About Me
+            </Link>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fadeUp_0.8s_1.2s_forwards]">
+          <span className="text-[0.65rem] text-[#64748b] tracking-[0.1em] uppercase">Scroll</span>
+          <div className="w-px h-10 bg-gradient-to-b from-[#ff6b5b] to-transparent animate-[scrollPulse_2s_ease-in-out_infinite]" />
+        </div>
+        <style>{`
+          @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+          @keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.6); } 50% { opacity: 1; transform: scaleY(1); } }
+        `}</style>
+      </section>
+
+      {/* Highlights */}
+      <section className="py-20 px-6">
+        <HighlightsStrip />
+      </section>
+
+      {/* Featured Project */}
+      <section className="py-20 px-6">
+        <FeaturedProject />
+      </section>
+
+      {/* Recent Experience */}
+      <section className="py-20 px-6">
+        <RecentExperience />
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 px-6">
+        <TestimonialsCarousel />
+      </section>
+    </>
+  );
+}
