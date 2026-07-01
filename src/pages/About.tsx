@@ -44,9 +44,11 @@ export default function About() {
             <SectionLabel>Biography</SectionLabel>
             <SectionTitle>Who I Am</SectionTitle>
             <Divider />
+              <img src="/photo.jpg.jpeg" alt="Siddhant Yadav" style={{width: '200px', borderRadius: '12px'}} />
             <p className="text-[#64748b] leading-relaxed mb-4">
               I am a Mechanical Engineer graduated from Pulchowk Campus, Institute of Engineering, Tribhuvan University, Nepal. My passion lies at the intersection of mechanical design, electronics, and intelligent systems, building autonomous platforms that operate in challenging real-world environments.
             </p>
+          
             <p className="text-[#64748b] leading-relaxed mb-4">
               I'm employed as Management Trainee at Gorkha Brewery Pvt. Ltd., Part of Carlsberg Group.
             </p>
