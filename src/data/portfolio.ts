@@ -1,7 +1,7 @@
 export const projects = [
   {
-    slug: 'anvesak-I',
-    title: 'ANVESAK-I',
+    slug: 'anvesak',
+    title: 'ANVESAK',
     shortDesc: 'Unmanned Surface Vehicle for river bathymetry and mapping using SONAR and LiDAR to generate 3D maps.',
     tags: ['USV/Robotics', 'SONAR', 'LiDAR', 'ROS'],
     category: 'USV/Robotics',
@@ -16,7 +16,7 @@ export const projects = [
     ],
     methodology: 'The USV hull was designed using CAD and fabricated with marine-grade materials. A custom sensor integration board connects SONAR (Garmin CV25), LiDAR (Velodyne VLP-16), IMU, and GPS modules. Navigation runs on ROS with a PID controller for path following. Data fusion uses point cloud registration algorithms to combine SONAR depth profiles with LiDAR terrain models.',
     outcomes: 'Successfully completed field trials on the Bagmati River, generating 3D bathymetric maps with sub-meter accuracy. The platform demonstrated stable autonomous navigation in currents up to 1.5 m/s. Presented at the University Scholar Conference 2025 and published findings in Chemical Horizon journal.',
-    team: ['Siddhant Yadav', 'Hemkala Awasthi', 'Regal Ghimire', 'Rudip Shrestha']
+    team: ['Siddhant Yadav', 'Team Member 2', 'Team Member 3']
   },
   {
     slug: 'h2o-lightcraft',
@@ -34,7 +34,7 @@ export const projects = [
     ],
     methodology: 'The turbine uses a Pelton wheel design optimized for low-flow streams. A 3D-printed prototype was tested with varying flow rates. The generator connects to a charge controller and Li-ion battery pack. LED arrays with diffusers provide even illumination. CAD modeling in SolidWorks preceded FEA analysis in ANSYS for structural validation.',
     outcomes: 'Prototype generated 5W sustained power from a 1.5m head, sufficient to light a small room. The system operated continuously for 72 hours in field testing. Recognized at the Pulchowk Innovation Program for sustainable design.',
-    team: ['Siddhant Yadav', 'Shristi Paudyal' , 'Swastik Dangi']
+    team: ['Siddhant Yadav', 'Team Member 2']
   },
   {
     slug: 'automatic-aerator',
@@ -250,6 +250,17 @@ export const collaborators = [
   { name: 'Assoc. Prof. Dr. Shree Raj Shakya', role: 'Faculty Mentor', institution: 'Pulchowk Campus, IOE' },
   { name: 'Ass. Prof. Dr. Sudip Bhattrai', role: 'Research Advisor', institution: 'Kathmandu University' },
   { name: 'Ass. Prof. Kamal Darlami', role: 'Project Supervisor', institution: 'Pulchowk Campus, IOE' }
+];
+
+export const organizations = [
+  { name: 'NAST', logo: '/orgs/nast.png' },
+  { name: 'BlueRobotics', logo: '/orgs/bluerobotics.png' },
+  { name: 'SEDS Nepal', logo: '/orgs/seds.png' },
+  { name: 'Pulchowk Campus', logo: '/orgs/pulchowk.png' },
+  { name: 'Kathmandu University', logo: '/orgs/ku.png' },
+  { name: 'Gorkha Brewery', logo: '/orgs/gorkha.png' },
+  { name: 'Thermopharm', logo: '/orgs/thermopharm.png' },
+  { name: 'Carlsberg Group', logo: '/orgs/carlsberg.png' },
 ];
 
 export const testimonials = [

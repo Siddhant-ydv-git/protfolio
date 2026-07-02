@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useReveal, SectionLabel, SectionTitle, Divider, PlaceholderImage, Tag, TechPill, Card } from '../components/Shared';
-import { projects, testimonials } from '../data/portfolio';
+import { projects, testimonials, organizations } from '../data/portfolio';
 
 const typingWords = ['Engineer', 'Maker', 'Researcher', 'Explorer'];
 
@@ -83,9 +83,9 @@ function FeaturedProject() {
 function RecentExperience() {
   const ref = useReveal();
   const experiences = [
-    { date: '2025 – Present', role: 'Management Trainee', org: 'Gorkha Brewery Pvt. Ltd. | Part of Carlsberg Group', location: 'Mukundapur, Nawalparasi, Nepal' },
-    { date: '2023 – 2024', role: 'NAST Intern', org: 'Nepal Academy of Science & Technology', location: 'Khumaltal, Lalitpur, Nepal' },
-    { date: '2022 – 2023', role: 'HVAC Intern', org: 'Thermopharm Engineering', location: 'East Vasai, Mumbai, India' },
+    { date: 'May 2026 – June 2026', role: 'Management Trainee', org: 'Gorkha Brewery Pvt. Ltd. | Part of Carlsberg Group', location: 'Kathmandu, Nepal' },
+    { date: '2023 – 2024', role: 'NAST Intern', org: 'Nepal Academy of Science & Technology', location: 'Lalitpur, Nepal' },
+    { date: '2022 – 2023', role: 'HVAC Intern', org: 'Thermopharm Engineering', location: 'Kathmandu, Nepal' },
   ];
   return (
     <div ref={ref} className="reveal max-w-4xl mx-auto">
@@ -103,6 +103,49 @@ function RecentExperience() {
             <p className="text-xs text-[#94a3b8] mt-0.5">{exp.location}</p>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function CollaboratorsMarquee() {
+  const ref = useReveal();
+  const items = [...organizations, ...organizations];
+
+  return (
+    <div ref={ref} className="reveal max-w-5xl mx-auto">
+      <SectionLabel>Collaborators</SectionLabel>
+      <SectionTitle>Organizations I've Worked With</SectionTitle>
+      <Divider />
+      <div className="marquee-wrap relative overflow-hidden">
+        {/* Edge fades */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#fefefe] to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#fefefe] to-transparent pointer-events-none" />
+        <div className="marquee gap-8 py-4">
+          {items.map((org, i) => (
+            <div
+              key={`${org.name}-${i}`}
+              className="flex-shrink-0 flex items-center gap-3 px-6 py-4 rounded-2xl glass-card glass-hover transition-all duration-300"
+            >
+              <div className="w-12 h-12 rounded-xl bg-white/60 flex items-center justify-center overflow-hidden flex-shrink-0">
+                <img
+                  src={org.logo}
+                  alt={org.name}
+                  className="w-full h-full object-contain p-1"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    img.style.display = 'none';
+                    img.parentElement!.classList.add('gradient-text', 'font-bold', 'text-sm');
+                    img.parentElement!.textContent = org.name.charAt(0);
+                  }}
+                />
+              </div>
+              <span className="text-sm font-medium text-[#1a1a2e] whitespace-nowrap" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {org.name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -166,7 +209,30 @@ export default function Home() {
           <div className="blob w-[500px] h-[500px] bg-[#ff6b5b] top-20 -right-40 opacity-30" />
           <div className="blob w-[400px] h-[400px] bg-[#14b8a6] bottom-20 -left-20 opacity-30" style={{ animationDelay: '-4s' }} />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto w-full">
+        <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col md:flex-row-reverse items-center gap-12">
+          {/* Floating Photo */}
+          <div className="flex-shrink-0 relative">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#ff6b5b] to-[#14b8a6] blur-2xl opacity-30 scale-110" />
+            <div
+              className="relative w-56 h-64 md:w-72 md:h-80 rounded-3xl overflow-hidden border-2 border-white/40 shadow-2xl"
+              style={{ animation: 'photoFloat 6s ease-in-out infinite' }}
+            >
+              <img
+                src="/mine.jpg"
+                alt="Siddhant Yadav"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  (e.currentTarget.parentElement as HTMLElement).classList.add('flex','items-center','justify-center','bg-gradient-to-br','from-[#ff6b5b]/20','to-[#14b8a6]/20');
+                }}
+              />
+            </div>
+            {/* Decorative ring */}
+            <div className="absolute -inset-3 rounded-3xl border border-[#ff6b5b]/20 -z-10" />
+            <div className="absolute -inset-6 rounded-3xl border border-[#14b8a6]/10 -z-10" />
+          </div>
+
+          <div className="flex-1">
           <p className="font-mono text-sm gradient-text mb-4 opacity-0 animate-[fadeUp_0.8s_0.3s_forwards]" style={{ fontFamily: 'Space Grotesk, monospace' }}>
             Hello, I&apos;m
           </p>
@@ -187,6 +253,7 @@ export default function Home() {
               About Me
             </Link>
           </div>
+          </div>{/* end flex-1 */}
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fadeUp_0.8s_1.2s_forwards]">
           <span className="text-[0.65rem] text-[#64748b] tracking-[0.1em] uppercase">Scroll</span>
@@ -211,6 +278,11 @@ export default function Home() {
       {/* Recent Experience */}
       <section className="py-20 px-6">
         <RecentExperience />
+      </section>
+
+      {/* Collaborators Marquee */}
+      <section className="py-20 px-6 overflow-hidden">
+        <CollaboratorsMarquee />
       </section>
 
       {/* Testimonials */}

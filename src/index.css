@@ -244,3 +244,25 @@ body {
   33% { transform: translate(30px, -30px) scale(1.1); }
   66% { transform: translate(-20px, 20px) scale(0.9); }
 }
+
+/* Marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Hero photo float */
+@keyframes photoFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
