@@ -1,9 +1,28 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useReveal, SectionLabel, SectionTitle, Divider, PlaceholderImage, Tag, TechPill } from '../components/Shared';
+import { useReveal, SectionLabel, SectionTitle, Divider, Tag, TechPill } from '../components/Shared';
 import { projects } from '../data/portfolio';
 
 const categories = ['All', 'USV/Robotics', 'Energy', 'Education', 'Space'];
+
+function ProjectImage({ src, alt }: { src?: string; alt: string }) {
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-48 object-cover rounded-t-xl"
+        onError={(e) => {
+          const target = e.currentTarget;
+          target.style.display = 'none';
+          const fallback = target.nextElementSibling as HTMLElement;
+          if (fallback) fallback.style.display = 'flex';
+        }}
+      />
+    );
+  }
+  return null;
+}
 
 export default function Projects() {
   const [filter, setFilter] = useState('All');
@@ -42,7 +61,27 @@ export default function Projects() {
               to={`/projects/${project.slug}`}
               className="block glass-card overflow-hidden card-lift group"
             >
-              <PlaceholderImage label={project.title} className="h-48 rounded-none rounded-t-xl" />
+              {/* Real image */}
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const next = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (next) next.style.display = 'flex';
+                  }}
+                />
+              )}
+              {/* Fallback placeholder */}
+              <div
+                className="w-full h-48 bg-gradient-to-br from-[#f1f5f9] to-[#e2e8f0] flex items-center justify-center text-[#94a3b8] text-sm"
+                style={{ display: project.image ? 'none' : 'flex' }}
+              >
+                {project.title}
+              </div>
+
               <div className="p-6">
                 <Tag>{project.category}</Tag>
                 <h3 className="text-lg font-semibold mt-2 mb-2 group-hover:text-[#ff6b5b] transition-colors text-[#1a1a2e]" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>

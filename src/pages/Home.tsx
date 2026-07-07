@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { useReveal, SectionLabel, SectionTitle, Divider, PlaceholderImage, Tag, TechPill, Card } from '../components/Shared';
-import { projects, testimonials, organizations } from '../data/portfolio';
+import { ArrowRight } from 'lucide-react';
+import { useReveal, SectionLabel, SectionTitle, Divider, Tag, TechPill, Card } from '../components/Shared';
+import { projects, testimonials, organizations, blogs } from '../data/portfolio';
 
 const typingWords = ['Engineer', 'Maker', 'Researcher', 'Explorer'];
 
@@ -55,6 +56,62 @@ function HighlightsStrip() {
   );
 }
 
+function FeaturedBlog() {
+  const ref = useReveal();
+  const blog = blogs[0];
+
+  return (
+    <div ref={ref} className="reveal max-w-5xl mx-auto">
+      <SectionLabel>Featured Blog</SectionLabel>
+      <SectionTitle>{blog.title}</SectionTitle>
+      <Divider />
+      <div className="grid md:grid-cols-5 gap-8 items-center">
+        <div className="md:col-span-2">
+          <div className="relative">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#ff6b5b] to-[#14b8a6] blur-2xl opacity-20 scale-105" />
+            <div className="relative rounded-3xl overflow-hidden border border-black/5 shadow-xl aspect-[4/3] bg-gradient-to-br from-[#ff6b5b]/10 to-[#14b8a6]/10 flex items-center justify-center">
+              {blog.image ? (
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const next = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (next) next.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <div
+                className="w-full h-full items-center justify-center text-[#94a3b8] text-sm"
+                style={{ display: blog.image ? 'none' : 'flex' }}
+              >
+                {blog.category}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="md:col-span-3">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="px-3 py-1 rounded-full text-xs font-medium bg-[#ff6b5b]/10 text-[#ff6b5b]">{blog.category}</span>
+            <span className="text-xs text-[#64748b]">{blog.date}</span>
+            <span className="text-xs text-[#64748b]">·</span>
+            <span className="text-xs text-[#64748b]">{blog.readTime}</span>
+          </div>
+          <p className="text-base text-[#64748b] leading-relaxed mb-6">{blog.excerpt}</p>
+          <Link
+            to={`/blog/${blog.slug}`}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-[#ff6b5b] to-[#14b8a6] text-white hover:shadow-[0_8px_24px_rgba(255,107,91,0.25)] transition-all duration-300 btn-ripple hover:scale-[1.02]"
+          >
+            Read This Blog
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function FeaturedProject() {
   const ref = useReveal();
   const project = projects[0];
@@ -64,7 +121,26 @@ function FeaturedProject() {
       <SectionTitle>ANVESAK</SectionTitle>
       <Divider />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <PlaceholderImage label="ANVESAK USV" className="h-64" />
+        <div className="relative rounded-2xl overflow-hidden h-64 bg-gradient-to-br from-[#f1f5f9] to-[#e2e8f0] flex items-center justify-center">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const next = e.currentTarget.nextElementSibling as HTMLElement;
+                if (next) next.style.display = 'flex';
+              }}
+            />
+          ) : null}
+          <div
+            className="w-full h-full items-center justify-center text-[#94a3b8] text-sm"
+            style={{ display: project.image ? 'none' : 'flex' }}
+          >
+            ANVESAK USV
+          </div>
+        </div>
         <div className="flex flex-col justify-center">
           <Tag>USV/Robotics</Tag>
           <p className="text-[#64748b] mt-3 mb-4 leading-relaxed">{project.shortDesc}</p>
@@ -127,20 +203,20 @@ function CollaboratorsMarquee() {
               key={`${org.name}-${i}`}
               className="flex-shrink-0 flex items-center gap-3 px-6 py-4 rounded-2xl glass-card glass-hover transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/60 flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="w-20 h-20 rounded-2xl bg-white/60 flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img
                   src={org.logo}
                   alt={org.name}
-                  className="w-full h-full object-contain p-1"
+                  className="w-full h-full object-contain p-2"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
                     img.style.display = 'none';
-                    img.parentElement!.classList.add('gradient-text', 'font-bold', 'text-sm');
+                    img.parentElement!.classList.add('gradient-text', 'font-bold', 'text-lg');
                     img.parentElement!.textContent = org.name.charAt(0);
                   }}
                 />
               </div>
-              <span className="text-sm font-medium text-[#1a1a2e] whitespace-nowrap" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <span className="text-base font-medium text-[#1a1a2e] whitespace-nowrap" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 {org.name}
               </span>
             </div>
@@ -171,6 +247,24 @@ function TestimonialsCarousel() {
         <div className="carousel-track" style={{ transform: `translateX(-${current * 100}%)` }}>
           {testimonials.map((t, i) => (
             <div key={i} className="min-w-full px-4">
+              <div className="flex justify-center mb-5">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ff6b5b] to-[#14b8a6] blur-md opacity-30 scale-110" />
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white shadow-lg bg-gradient-to-br from-[#ff6b5b]/15 to-[#14b8a6]/15 flex items-center justify-center">
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement;
+                        img.style.display = 'none';
+                        img.parentElement!.classList.add('gradient-text', 'font-bold', 'text-2xl');
+                        img.parentElement!.textContent = t.name.charAt(0);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
               <blockquote className="text-lg text-[#64748b] leading-relaxed mb-4 italic">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
@@ -268,6 +362,11 @@ export default function Home() {
       {/* Highlights */}
       <section className="py-20 px-6">
         <HighlightsStrip />
+      </section>
+
+      {/* Featured Blog */}
+      <section className="py-20 px-6">
+        <FeaturedBlog />
       </section>
 
       {/* Featured Project */}

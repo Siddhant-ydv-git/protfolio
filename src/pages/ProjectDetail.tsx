@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { useReveal, SectionLabel, PlaceholderImage, Tag, Card } from '../components/Shared';
+import { useReveal, SectionLabel, Tag, Card } from '../components/Shared';
 import { projects } from '../data/portfolio';
 
 export default function ProjectDetail() {
@@ -24,7 +24,25 @@ export default function ProjectDetail() {
           <ArrowLeft className="w-4 h-4" /> Back to Projects
         </Link>
 
-        <PlaceholderImage label={`${project.title} Banner`} className="w-full h-64 md:h-80 mb-8" />
+        {/* Banner image with fallback */}
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-64 md:h-80 object-cover rounded-2xl mb-8"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const next = e.currentTarget.nextElementSibling as HTMLElement;
+              if (next) next.style.display = 'flex';
+            }}
+          />
+        ) : null}
+        <div
+          className="w-full h-64 md:h-80 rounded-2xl mb-8 bg-gradient-to-br from-[#f1f5f9] to-[#e2e8f0] items-center justify-center text-[#94a3b8] text-sm"
+          style={{ display: project.image ? 'none' : 'flex' }}
+        >
+          {project.title}
+        </div>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((t) => <Tag key={t}>{t}</Tag>)}
@@ -60,15 +78,6 @@ export default function ProjectDetail() {
           <div>
             <SectionLabel>Outcomes & Results</SectionLabel>
             <p className="text-[#64748b] leading-relaxed">{project.outcomes}</p>
-          </div>
-
-          <div>
-            <SectionLabel>Gallery</SectionLabel>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <PlaceholderImage key={i} label={`${project.title} ${i}`} className="h-32" />
-              ))}
-            </div>
           </div>
 
           <div>

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { useReveal, SectionLabel, PlaceholderImage, Tag } from '../components/Shared';
+import { useReveal, SectionLabel, Tag } from '../components/Shared';
 import { programs } from '../data/portfolio';
 
 export default function ProgramDetail() {
@@ -24,7 +24,25 @@ export default function ProgramDetail() {
           <ArrowLeft className="w-4 h-4" /> Back to Programs
         </Link>
 
-        <PlaceholderImage label={`${program.title} Banner`} className="w-full h-64 md:h-80 mb-8" />
+        {/* Banner image with fallback */}
+        {program.image ? (
+          <img
+            src={program.image}
+            alt={program.title}
+            className="w-full h-64 md:h-80 object-cover rounded-2xl mb-8"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const next = e.currentTarget.nextElementSibling as HTMLElement;
+              if (next) next.style.display = 'flex';
+            }}
+          />
+        ) : null}
+        <div
+          className="w-full h-64 md:h-80 rounded-2xl mb-8 bg-gradient-to-br from-[#f1f5f9] to-[#e2e8f0] items-center justify-center text-[#94a3b8] text-sm"
+          style={{ display: program.image ? 'none' : 'flex' }}
+        >
+          {program.title}
+        </div>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {program.tags.map((t) => <Tag key={t}>{t}</Tag>)}
@@ -60,15 +78,6 @@ export default function ProgramDetail() {
           <div>
             <SectionLabel>Outcomes</SectionLabel>
             <p className="text-[#64748b] leading-relaxed">{program.outcomes}</p>
-          </div>
-
-          <div>
-            <SectionLabel>Gallery</SectionLabel>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <PlaceholderImage key={i} label={`${program.title} ${i}`} className="h-32" />
-              ))}
-            </div>
           </div>
 
           <div>

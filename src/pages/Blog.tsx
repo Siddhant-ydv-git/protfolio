@@ -29,11 +29,25 @@ export default function Blog() {
       <section className="py-16 px-6">
         <div ref={gridRef} className="reveal max-w-5xl mx-auto">
           <div className="grid grid-cols-1 gap-8">
-            {blogs.map((blog, index) => (
+            {blogs.map((blog) => (
               <Link key={blog.slug} to={`/blog/${blog.slug}`}>
-                <Card className="group">
-                  <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-1">
+                <Card className="group overflow-hidden">
+                  <div className="flex flex-col md:flex-row gap-0">
+                    {/* Cover image */}
+                    {blog.image && (
+                      <div className="md:w-64 flex-shrink-0">
+                        <img
+                          src={blog.image}
+                          alt={blog.title}
+                          className="w-full h-48 md:h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+                          onError={(e) => {
+                            e.currentTarget.parentElement!.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                    )}
+                    {/* Text */}
+                    <div className="flex-1 p-6">
                       <div className="flex items-center gap-3 mb-3">
                         <Tag>{blog.category}</Tag>
                         <div className="flex items-center gap-1 text-xs text-[#64748b]">

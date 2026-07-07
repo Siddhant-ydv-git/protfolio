@@ -89,35 +89,11 @@ const photoAlbums = [
 // Video Gallery Data - YouTube projects
 const videoGallery = [
   {
-    id: 'anvesak-demo',
-    title: 'ANVESAK - Autonomous River Bathymetry',
-    description: 'Demonstration of the unmanned surface vehicle for river mapping',
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
-    project: 'ANVESAK',
-    date: 'Nov 2024',
-  },
-  {
-    id: 'cansat-launch',
-    title: 'CanSat Launch & Recovery',
-    description: 'SEDS Nepal CanSat deployment and telemetry analysis',
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
-    project: 'SEDS Nepal',
-    date: 'Oct 2024',
-  },
-  {
-    id: 'aerator-system',
-    title: 'Automatic Aerator System Demo',
-    description: 'Smart pond aeration with dissolved oxygen monitoring',
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
-    project: 'Aquaculture',
-    date: 'Aug 2024',
-  },
-  {
     id: 'h2o-lightcraft',
-    title: 'H2O LightCraft Prototype',
-    description: 'Micro-hydro powered LED lighting system demonstration',
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
-    project: 'Energy',
+    title: 'H2O LightCraft — STEAM Educational Tool',
+    description: 'Design and demonstration of the H2O LightCraft project submitted to the Ministry of Education, Science and Technology, Nepal. An interactive STEAM learning device covering refraction, Li-Fi, and electrolysis.',
+    youtubeId: 'NaATDPdbL_0',
+    project: 'H2O LightCraft',
     date: 'Jun 2024',
   },
 ];
@@ -266,7 +242,15 @@ export default function Gallery() {
                       className="absolute inset-0 flex items-center justify-center cursor-pointer group"
                       onClick={() => setPlayingVideo(video.id)}
                     >
-                      <PlaceholderImage label={video.title} className="absolute inset-0 rounded-none" />
+                      <img
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        onError={(e) => {
+                          // fallback to hqdefault if maxres not available
+                          e.currentTarget.src = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+                        }}
+                      />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                         <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <Play className="w-6 h-6 text-[#ff6b5b] ml-1" fill="#ff6b5b" />

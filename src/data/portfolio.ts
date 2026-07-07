@@ -2,6 +2,7 @@ export const projects = [
   {
     slug: 'anvesak',
     title: 'ANVESAK',
+    image: '/projects/anvesak.jpg',
     shortDesc: 'Unmanned Surface Vehicle for river bathymetry and mapping using SONAR and LiDAR to generate 3D maps.',
     tags: ['USV/Robotics', 'SONAR', 'LiDAR', 'ROS'],
     category: 'USV/Robotics',
@@ -16,11 +17,12 @@ export const projects = [
     ],
     methodology: 'The USV hull was designed using CAD and fabricated with marine-grade materials. A custom sensor integration board connects SONAR (Garmin CV25), LiDAR (Velodyne VLP-16), IMU, and GPS modules. Navigation runs on ROS with a PID controller for path following. Data fusion uses point cloud registration algorithms to combine SONAR depth profiles with LiDAR terrain models.',
     outcomes: 'Successfully completed field trials on the Bagmati River, generating 3D bathymetric maps with sub-meter accuracy. The platform demonstrated stable autonomous navigation in currents up to 1.5 m/s. Presented at the University Scholar Conference 2025 and published findings in Chemical Horizon journal.',
-    team: ['Siddhant Yadav', 'Team Member 2', 'Team Member 3']
+    team: ['Siddhant Yadav', 'Hemkala Awasthi', 'Regal Ghimire','Rudip Shrestha']
   },
   {
     slug: 'h2o-lightcraft',
     title: 'H2O LightCraft',
+    image: '/projects/h2o-lightcraft.jpg',
     shortDesc: 'Hydro-powered illumination system harnessing water flow energy for sustainable lighting in remote areas.',
     tags: ['Energy', 'Hydropower', 'Sustainability', 'LED'],
     category: 'Energy',
@@ -39,6 +41,7 @@ export const projects = [
   {
     slug: 'automatic-aerator',
     title: 'Automatic Aerator System',
+    image: '/projects/automatic-aerator.jpg',
     shortDesc: 'Automated aeration control system for aquaculture ponds using dissolved oxygen sensing and smart actuation.',
     tags: ['USV/Robotics', 'IoT', 'Aquaculture', 'Automation'],
     category: 'USV/Robotics',
@@ -57,6 +60,7 @@ export const projects = [
   {
     slug: 'biogas-study',
     title: 'Biogas & Biomass Energy Study',
+    image: '/projects/biogas-study.jpg',
     shortDesc: 'Research internship at NAST analyzing biogas potential and biomass energy conversion for rural Nepal.',
     tags: ['Energy', 'Biogas', 'Biomass', 'Research'],
     category: 'Energy',
@@ -75,6 +79,7 @@ export const projects = [
   {
     slug: 'hvac-internship',
     title: 'HVAC Systems Internship',
+    image: '/projects/hvac-internship.jpg',
     shortDesc: 'Industrial internship at Thermopharm focusing on HVAC system design, load calculations, and installation.',
     tags: ['Education', 'HVAC', 'Thermodynamics', 'Industry'],
     category: 'Education',
@@ -96,6 +101,7 @@ export const programs = [
   {
     slug: 'seds-cansat',
     title: 'SEDS CanSat Training',
+    image: '/programs/seds-cansat.jpg',
     shortDesc: 'Intensive training program on CanSat design, fabrication, and launch organized by SEDS Nepal.',
     tags: ['Space', 'CanSat', 'Training'],
     category: 'Space',
@@ -113,6 +119,7 @@ export const programs = [
   {
     slug: 'nasa-space-apps',
     title: 'NASA Space Apps Challenge',
+    image: '/programs/nasa-space-apps.jpg',
     shortDesc: 'Participated in the NASA International Space Apps Challenge, developing solutions for space exploration.',
     tags: ['Space', 'Hackathon', 'NASA'],
     category: 'Space',
@@ -129,6 +136,7 @@ export const programs = [
   {
     slug: 'innocraft',
     title: 'InnoCraft Program',
+    image: '/programs/innocraft.jpg',
     shortDesc: 'Innovation and entrepreneurship program for developing engineering prototypes into viable products.',
     tags: ['Education', 'Innovation', 'Entrepreneurship'],
     category: 'Education',
@@ -146,6 +154,7 @@ export const programs = [
   {
     slug: 'art-of-science',
     title: 'Art of Science Photography',
+    image: '/programs/art-of-science.jpg',
     shortDesc: 'Photography competition exploring the intersection of scientific phenomena and visual art.',
     tags: ['Education', 'Photography', 'Science'],
     category: 'Education',
@@ -162,6 +171,7 @@ export const programs = [
   {
     slug: 'pulchowk-innovation',
     title: 'Pulchowk Innovation Program',
+    image: '/programs/pulchowk-innovation.jpg',
     shortDesc: 'Campus innovation program supporting student engineering projects from concept to demonstration.',
     tags: ['Education', 'Innovation', 'Campus'],
     category: 'Education',
@@ -178,6 +188,7 @@ export const programs = [
   {
     slug: 'mechtrix-13',
     title: 'MechTRIX 13',
+    image: '/programs/mechtrix-13.jpg',
     shortDesc: 'Annual mechanical engineering exhibition showcasing student projects and technical competitions.',
     tags: ['Education', 'Exhibition', 'Engineering'],
     category: 'Education',
@@ -194,6 +205,7 @@ export const programs = [
   {
     slug: 'planetarium-events',
     title: 'Free Planetarium Events',
+    image: '/programs/planetarium-events.jpg',
     shortDesc: 'Organized free planetarium shows and stargazing events to promote space science awareness.',
     tags: ['Space', 'Outreach', 'Education'],
     category: 'Space',
@@ -210,6 +222,7 @@ export const programs = [
   {
     slug: 'ai-space-art',
     title: 'AI Space Art Competition',
+    image: '/programs/ai-space-art.jpg',
     shortDesc: 'Competition combining artificial intelligence and space imagery to create artistic visualizations.',
     tags: ['Space', 'AI', 'Art'],
     category: 'Space',
@@ -268,118 +281,75 @@ export const testimonials = [
     quote: 'Siddhant brings a rare combination of technical depth and creative problem-solving. His work on ANVESAK demonstrated exceptional engineering rigor and field capability.',
     name: 'Dr. Shree Raj Shakya',
     role: 'Associate Professor, Pulchowk Campus',
-    rating: 5
+    rating: 5,
+    photo: '/testimony/shakya.jpg'
   },
   {
     quote: 'One of the most dedicated students I have mentored. Siddhant consistently goes beyond the curriculum, building real systems that work in the field, not just on paper.',
     name: 'Dr. Sudip Bhattrai',
     role: 'Assistant Professor, Kathmandu University',
-    rating: 5
+    rating: 5,
+    photo: '/testimony/bhattrai.jpg'
   },
   {
     quote: 'His ability to integrate mechanical design with electronics and software makes him stand out. The automatic aerator project was a perfect example of systems thinking.',
     name: 'Kamal Darlami',
     role: 'Assistant Professor, Pulchowk Campus',
-    rating: 5
+    rating: 5,
+    photo: '/testimony/darlami.jpg'
   }
 ];
 
 export const blogs = [
   {
-    slug: 'river-bathymetry-challenges',
-    title: 'Challenges in River Bathymetry Mapping',
-    excerpt: 'Exploring the technical and environmental challenges of autonomous river surveying in Nepal\'s complex terrain.',
-    date: 'June 2025',
-    readTime: '8 min read',
-    category: 'Engineering',
+    slug: 'beyond-the-bottle',
+    image: '/blog/beyond-the-bottle.jpg',
+    title: 'Beyond the Bottle: How Gorkha Brewery Is Quietly Changing Lives in Nawalparasi',
+    excerpt: 'A reflection on my time as a Management Trainee at Gorkha Brewery — how a beer factory in Mukundapur became an institution holding a community together.',
+    date: 'July 2025',
+    readTime: '7 min read',
+    category: 'Industry & Society',
     content: `
-      <p>River bathymetry mapping presents unique challenges in Nepal's diverse and often inaccessible terrain. Traditional surveying methods require extensive manpower and time, making them impractical for regular monitoring.</p>
+      <p class="lead">The first thing you notice when you arrive in Mukundapur is not the factory. It is the smell.</p>
+      <p>A warm, earthy, unmistakable smell of cow and buffalo farms drifts through the air as you move through the village. For a newcomer, it takes a moment to place. But for the people who live here, it is the smell of a livelihood. One that, surprisingly, traces its roots back to a beer factory.</p>
+      <p>I joined Gorkha Brewery Pvt. Ltd. as a Management Trainee a few months ago. As part of my induction, I was placed in the Packaging Department — one of the largest departments in the plant by headcount — and my department head gave me a simple but valuable instruction: go sit at every machine for a few hours, and learn from the operators. Not from manuals. From people.</p>
+      <p>So, I did.</p>
+      <p>But somewhere between the hum of the labelling machine and the rhythmic movement of bottles on the conveyor, I sat beside an operator who has worked in this factory for over 25 years.</p>
+      <p>He joined Gorkha Brewery at the age of 21, a young boy from Sarlahi district, looking for work. His first job was in the bottle-feeding area. Nothing glamorous. Repetitive, physical, entry-level. But steady.</p>
+      <p>Over the years, through multiple promotions and the kind of quiet persistence that doesn't make headlines, he worked his way up. Today, he is a permanent employee and skilled operator of the labelling machine.</p>
+      <p>But that is only part of the story.</p>
+      <p>He got married. He brought his wife here. His children grew up here, went to school here, built their early lives in this village that sits beside a beer factory in the western Terai. His son is now in Japan. Another son has gone back to Sarlahi and works as a contractor. His daughter is married.</p>
+      <p>For a typical Nepali family, especially one from a rural district with limited opportunities, this is not a small thing. This is the whole dream: educated children, a settled daughter, a family that has moved forward. He has lived that dream, and he lived it because of a steady job that gave him dignity, growth, and a place to call home for a quarter century.</p>
+      <p>What struck me most was how matter-of-factly he told me this. Not with pride, exactly. More with the quiet satisfaction of a man who knows that his life has gone the way it should.</p>
+      <p>And this is not one man's story.</p>
+      <p>Walk through the Packaging Department on any given shift and you are walking through a cross-section of rural Nepal. The workforce here is predominantly local — people from Nawalparasi, from Chitwan — who found stable, well-paying work at a time when that was not easy to find.</p>
+      <p>The wages at Gorkha Brewery, by the standards of this region, are genuinely good. Workers here earn enough not just to survive but to plan, to put children in school, to build a house, and to save. The economic activity generated by a single factory with this many employees ripples outward: into local markets, transport, housing, small businesses.</p>
 
-      <h2>The Challenge of Variable Flow</h2>
-      <p>Nepal's rivers experience extreme seasonal variation. Monsoon flows can be 10-20 times greater than dry season flows, dramatically changing river morphology. This variability makes consistent data collection challenging.</p>
+      <h2>Let us go back to that smell.</h2>
+      <p>The reason almost every household in Mukundapur and the surrounding villages runs a cow or buffalo farm is not coincidental. Gorkha Brewery supplies <em>chokar</em>, the grain byproduct from the brewing process, at highly subsidised rates to local farmers. What is waste from the factory becomes feed for livestock. What might be discarded becomes income.</p>
+      <p>This area has quietly become one of the more productive dairy zones in Nepal. Milk collection, dairy cooperatives, the morning rhythm of households built around their animals — all of it has a thread that leads back to the factory gate.</p>
+      <p>This is what economists call a value chain effect, but in practice it just looks like a village where people have more than they used to.</p>
 
-      <h2>Access Issues</h2>
-      <p>Many critical river segments are in remote locations without road access. Carrying traditional survey equipment to these sites is logistically difficult and expensive.</p>
+      <h2>The Uncomfortable Conversation</h2>
+      <p>Here is the part of this article that I suspect will make some readers uncomfortable.</p>
+      <p>Nepal is still, in large parts, a society that views alcohol with moral suspicion. Not without reasons — addiction and its social costs are real, and they cannot be dismissed. But the conversation rarely goes further than that. If the government announced tomorrow that it was banning the beer industry in Nepal, a significant portion of the population, particularly outside major cities, would likely support it. Many would call it a moral victory.</p>
+      <p>They would be less aware of what disappears with it.</p>
+      <p>The tax revenue that companies like Gorkha Brewery pay to the government every year is huge. These are funds that go into infrastructure, schools, hospitals, public services. The excise duty on alcohol is one of the more reliable revenue streams in Nepal's tax system, and the beer industry is a meaningful contributor to it.</p>
+      <p>Then there are the indirect economic effects: the transport companies that move raw materials and finished goods, the suppliers of glass bottles and packaging materials, the contractors, the vendors, the landlords who rent rooms to workers who have migrated here.</p>
+      <p>Gorkha Brewery is not just another beer producing company — it is a driver for social and economic change.</p>
 
-      <h2>Our Approach with ANVESAK</h2>
-      <p>The unmanned surface vehicle approach allows us to reach difficult sections safely. The USV can be transported disassembled and deployed on-site, enabling surveys in previously inaccessible areas.</p>
+      <h2>A Factory That Gives Back</h2>
+      <p>Beyond employment and economic activity, Gorkha Brewery has also invested directly in the community through its Corporate Social Responsibility programs.</p>
+      <p>These are not acts of charity from a disconnected corporation. They are investments in the community that the company itself depends on — the workforce, their families, the land.</p>
 
-      <h2>Future Directions</h2>
-      <p>We're working on integrating AI-based obstacle detection and improved autonomy to enable longer survey missions with minimal human oversight.</p>
+      <h2>What I Walked Away With</h2>
+      <p>I came to Gorkha Brewery as an engineer, a Management Trainee. I expected to learn about machines, processes, and production lines. I did learn those things. But beyond that, sitting beside that labelling operator, listening to him describe 25 years of a life built in this place, I understood something that no textbook on industrial management had prepared me for.</p>
+      <p>I walked away with the experience and learning that I'll carry to the rest of my life.</p>
+      <p>A factory is not just a building where things are made. At its best, it is an institution that holds a community together. It is the reason a man from Sarlahi could raise his children, send his son to Japan, and sit at his machine with the quiet confidence of someone who has done what he set out to do.</p>
+      <p>Gorkha Brewery makes beer. But what it has been quietly making, for decades, is something harder to put in a bottle: stability, opportunity, and a better life for the people of this corner of Nawalparasi.</p>
+      <p>That story deserves to be told.</p>
     `,
-    tags: ['USV', 'Bathymetry', 'Nepal', 'Research']
-  },
-  {
-    slug: 'renewable-energy-rural-nepal',
-    title: 'Renewable Energy Solutions for Rural Nepal',
-    excerpt: 'Lessons from field research on biogas and biomass energy implementation in off-grid communities.',
-    date: 'May 2025',
-    readTime: '12 min read',
-    category: 'Energy',
-    content: `
-      <p>Working with NAST on renewable energy research revealed both the immense potential and significant challenges of implementing sustainable energy solutions in rural Nepal.</p>
-
-      <h2>Biogas: A Viable Solution</h2>
-      <p>Biogas digesters have been promoted in Nepal for decades, yet adoption rates vary significantly. Our research identified that mixed feedstock—combining agricultural waste with animal dung—increases methane yield by up to 25%.</p>
-
-      <h2>Biomass Briquettes</h2>
-      <p>Agricultural residues that were traditionally burned in fields can be compressed into fuel briquettes. This not only provides clean cooking fuel but also reduces air pollution from open burning.</p>
-
-      <h2>Community Engagement is Key</h2>
-      <p>Technical feasibility alone doesn't ensure success. Projects with strong community ownership and local maintenance training showed dramatically higher sustainability.</p>
-
-      <h2>Policy Recommendations</h2>
-      <p>We recommended revised subsidy structures that prioritize maintenance training alongside initial installation support.</p>
-    `,
-    tags: ['Biogas', 'Biomass', 'Sustainability', 'Nepal']
-  },
-  {
-    slug: 'space-education-nepal',
-    title: 'Building Space Education in Nepal',
-    excerpt: 'Reflections on organizing planetarium events and promoting space science awareness.',
-    date: 'April 2025',
-    readTime: '6 min read',
-    category: 'Space',
-    content: `
-      <p>Space exploration captures imagination like few other fields. Bringing that wonder to students across Nepal has been one of my most rewarding experiences.</p>
-
-      <h2>The Planetarium Initiative</h2>
-      <p>Working with SEDS Nepal and the campus astronomy club, we organized free planetarium shows using portable domes. These events reached over 500 students across multiple sessions.</p>
-
-      <h2>Challenges in Science Communication</h2>
-      <p>Explaining complex astronomical concepts to diverse audiences required creative approaches. We developed interactive demonstrations and hands-on activities to complement visual shows.</p>
-
-      <h2>Impact on Students</h2>
-      <p>Post-event surveys showed significant increases in interest in STEM fields among participants. Several students later joined engineering programs, citing the planetarium visits as influential.</p>
-
-      <h2>Future Plans</h2>
-      <p>We're developing a mobile observatory concept to bring telescope viewing sessions to schools outside Kathmandu Valley.</p>
-    `,
-    tags: ['Space', 'Education', 'Outreach', 'SEDS']
-  },
-  {
-    slug: 'disaster-risk-management',
-    title: 'Engineering for Disaster Resilience',
-    excerpt: 'How autonomous systems can support disaster risk reduction in vulnerable regions.',
-    date: 'March 2025',
-    readTime: '10 min read',
-    category: 'Engineering',
-    content: `
-      <p>Nepal's geographic and geological setting makes it highly vulnerable to multiple disaster types. Engineering solutions can play a crucial role in risk reduction and response.</p>
-
-      <h2>Flood Mapping and Early Warning</h2>
-      <p>The ANVESAK platform's bathymetric mapping capabilities can support flood modeling and early warning systems. Accurate river depth data is essential for predicting flood extent and timing.</p>
-
-      <h2>Rapid Assessment After Events</h2>
-      <p>Unmanned systems can be deployed quickly after disasters to assess damage without risking human responders. Aerial and surface drones provide critical situational awareness.</p>
-
-      <h2>Community-Based Approaches</h2>
-      <p>Technology alone isn't sufficient. Effective disaster risk reduction requires community engagement, local capacity building, and integration with traditional knowledge systems.</p>
-
-      <h2>Integration with National Systems</h2>
-      <p>We're working to integrate our mapping data with Nepal's National Disaster Risk Reduction and Management Authority (NDRRMA) systems.</p>
-    `,
-    tags: ['Disaster', 'USV', 'Resilience', 'Nepal']
+    tags: ['Gorkha Brewery', 'Industry', 'Society', 'Nepal', 'Management']
   }
 ];
 
