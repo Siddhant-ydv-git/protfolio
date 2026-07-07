@@ -13,30 +13,30 @@ export const projects = [
       'Implement LiDAR-based above-water terrain mapping',
       'Develop autonomous navigation with GPS waypoint following',
       'Generate fused 3D maps combining above and below-water data',
-      'Conduct field trials on Kathmandu Valley rivers'
+      'Conduct field trials in water bodies of Nepal'
     ],
-    methodology: 'The USV hull was designed using CAD and fabricated with marine-grade materials. A custom sensor integration board connects SONAR (Garmin CV25), LiDAR (Velodyne VLP-16), IMU, and GPS modules. Navigation runs on ROS with a PID controller for path following. Data fusion uses point cloud registration algorithms to combine SONAR depth profiles with LiDAR terrain models.',
-    outcomes: 'Successfully completed field trials on the Bagmati River, generating 3D bathymetric maps with sub-meter accuracy. The platform demonstrated stable autonomous navigation in currents up to 1.5 m/s. Presented at the University Scholar Conference 2025 and published findings in Chemical Horizon journal.',
+    methodology: 'The USV hull was designed using CAD and fabricated with fiber-glass materials. A sensor integration board connects SONAR (Bluerobotics Altemeter and Echosounder Ping Sonar), LiDAR (LiVOX-Mid360), IMU, and GPS modules. Pixhawk 6 for path following. Data fusion uses point cloud registration algorithms to combine SONAR depth profiles with LiDAR terrain models.',
+    outcomes: 'Successfully completed field trials on the Kulekhani Reservoir, Taudaha Lake, Phewa Lake, Narayani River, and Trishuli River, generating 3D bathymetric maps with milimeter accuracy. The platform demonstrated stable autonomous navigation in currents up to 1.5 m/s. Presented at the University Scholar Conference 2025 and published findings in Chemical Horizon journal.',
     team: ['Siddhant Yadav', 'Hemkala Awasthi', 'Regal Ghimire','Rudip Shrestha']
   },
   {
     slug: 'h2o-lightcraft',
     title: 'H2O LightCraft',
     image: '/projects/h2o-lightcraft.jpg',
-    shortDesc: 'Hydro-powered illumination system harnessing water flow energy for sustainable lighting in remote areas.',
-    tags: ['Energy', 'Hydropower', 'Sustainability', 'LED'],
-    category: 'Energy',
-    overview: 'H2O LightCraft is a micro-hydro powered lighting system designed for off-grid communities in Nepal. It converts kinetic energy from flowing water into electricity to power LED illumination, providing a sustainable and affordable lighting solution for rural households near streams and rivers.',
+    shortDesc: 'This was a project funded by the Ministry of Education Science and Technology, Government of Nepal. The goal of the project was to develop a device to help high school students learn the scientific principles in fun and practical way.',
+    tags: ['STEAM', 'Light', 'Water', 'Hydrogen Fuel'],
+    category: 'STEAM',
+    overview: 'This was a project funded by the Ministry of Education Science and Technology, Government of Nepal. The goal of the project was to develop a device to help high school students learn the scientific principles in fun and practical way.',
     objectives: [
-      'Design a compact micro-hydro turbine for low-head water sources',
-      'Develop efficient energy conversion and storage circuit',
-      'Create durable, weather-resistant housing for outdoor deployment',
-      'Achieve sufficient output to power LED lighting for 8+ hours',
-      'Keep total system cost under $50 for community affordability'
+      'Design a compact device for STEAM teaching material',
+      'Fabricate the device',
+      'Integrate the optical systems to demostrate different priniciple of light',
+      'Integrate the electrolysis system',
+      'Integrate the LiFi techonology demostratino kit.'
     ],
-    methodology: 'The turbine uses a Pelton wheel design optimized for low-flow streams. A 3D-printed prototype was tested with varying flow rates. The generator connects to a charge controller and Li-ion battery pack. LED arrays with diffusers provide even illumination. CAD modeling in SolidWorks preceded FEA analysis in ANSYS for structural validation.',
-    outcomes: 'Prototype generated 5W sustained power from a 1.5m head, sufficient to light a small room. The system operated continuously for 72 hours in field testing. Recognized at the Pulchowk Innovation Program for sustainable design.',
-    team: ['Siddhant Yadav', 'Team Member 2']
+    methodology: 'The system was design in Solidwork with proper dimensioning and clearance. The fabrication was done using plywood and glass. Different system were tested individually and integrated one by one. Final assembly including power supply wiring etc were done.',
+    outcomes: 'The device was completely designed, fabricated and tested by the team. The demonstration was also done in program organized by the ministry in front of school students. The students found the device very interactive and engaging. They learned about acid-base reaction, different ligh principles and phenomenon like reflection, refraction, total internal reflectino, rgb color mixing, hologram, electrolysis of water, telescope, microscope, and hydrogen as fule.',
+    team: ['Siddhant Yadav', 'Shristi Paudyal', 'Swastik Dangi']
   },
   {
     slug: 'automatic-aerator',
@@ -49,13 +49,13 @@ export const projects = [
     objectives: [
       'Implement real-time dissolved oxygen monitoring with calibrated sensors',
       'Design smart control logic for automatic aerator activation',
-      'Reduce energy consumption compared to continuous aeration',
+      'Effective areation with mobile system',
       'Build a low-cost, solar-powered system for rural fish farms',
       'Enable remote monitoring via mobile app'
     ],
-    methodology: 'DO sensors (Atlas Scientific) feed data to an Arduino Mega controller. A threshold-based control algorithm with hysteresis prevents rapid cycling. Solar panels charge a battery bank for off-grid operation. An ESP32 module provides WiFi connectivity for remote monitoring through a custom web dashboard.',
-    outcomes: 'Achieved 40% energy savings compared to continuous aeration in pilot ponds. Maintained DO levels within optimal range (5-8 mg/L) with 95% reliability. The system was demonstrated at MechTRIX 13 engineering exhibition.',
-    team: ['Siddhant Yadav', 'Team Member 2', 'Team Member 3']
+    methodology: 'DO sensors feed data to an Arduino Mega controller. A threshold-based control algorithm with hysteresis prevents rapid cycling. Solar panels charge a battery bank for off-grid operation. An ESP32 module provides WiFi connectivity for remote monitoring through a custom web dashboard.',
+    outcomes: 'The project was not successful because of budget over run from restimated budget. We learned the engineering is not just about making machines. The machines should also cost effective.',
+    team: ['Siddhant Yadav', 'Subhanjal Pant', 'Rajib Mandal']
   },
   {
     slug: 'biogas-study',
@@ -260,20 +260,24 @@ export const publications = [
 ];
 
 export const collaborators = [
-  { name: 'Assoc. Prof. Dr. Shree Raj Shakya', role: 'Faculty Mentor', institution: 'Pulchowk Campus, IOE' },
-  { name: 'Ass. Prof. Dr. Sudip Bhattrai', role: 'Research Advisor', institution: 'Kathmandu University' },
-  { name: 'Ass. Prof. Kamal Darlami', role: 'Project Supervisor', institution: 'Pulchowk Campus, IOE' }
+  { name: 'Assoc. Prof. Dr. Shree Raj Shakya', role: 'Project Supervisor', institution: 'Pulchowk Campus, IOE' },
+  { name: 'Ass. Prof. Dr. Sudip Bhattrai', role: 'Research Advisor / Mentor', institution: 'Pulchowk Campus, IOE' },
+  { name: 'Ass. Prof. Kamal Darlami', role: 'Project Supervisor', institution: 'Pulchowk Campus, IOE' },
+  { name: 'Ass. Prof. Biman Rimal', role: 'Research Advisro / Mentor', institution: 'Pulchowk Campus, IOE' }
 ];
 
 export const organizations = [
   { name: 'NAST', logo: '/orgs/nast.png' },
   { name: 'BlueRobotics', logo: '/orgs/bluerobotics.png' },
-  { name: 'SEDS Nepal', logo: '/orgs/seds.png' },
+  { name: 'SEDS Pulchowk', logo: '/orgs/seds.png' },
   { name: 'Pulchowk Campus', logo: '/orgs/pulchowk.png' },
   { name: 'Kathmandu University', logo: '/orgs/ku.png' },
   { name: 'Gorkha Brewery', logo: '/orgs/gorkha.png' },
   { name: 'Thermopharm', logo: '/orgs/thermopharm.png' },
   { name: 'Carlsberg Group', logo: '/orgs/carlsberg.png' },
+  { name: 'IIEC, Pulchowk', logo: '/orgs/iiec.png' },
+  { name: 'National Innovation Centre', logo: '/orgs/nic.png' },
+  { name: 'MoEST, GoN', logo: '/orgs/moest.png' },
 ];
 
 export const testimonials = [
@@ -285,18 +289,18 @@ export const testimonials = [
     photo: '/testimony/shakya.jpg'
   },
   {
-    quote: 'One of the most dedicated students I have mentored. Siddhant consistently goes beyond the curriculum, building real systems that work in the field, not just on paper.',
-    name: 'Dr. Sudip Bhattrai',
-    role: 'Assistant Professor, Kathmandu University',
-    rating: 5,
-    photo: '/testimony/bhattrai.jpg'
-  },
-  {
-    quote: 'His ability to integrate mechanical design with electronics and software makes him stand out. The automatic aerator project was a perfect example of systems thinking.',
-    name: 'Kamal Darlami',
-    role: 'Assistant Professor, Pulchowk Campus',
+    quote: 'A reliable and capable team leader with strong leadership and professionalism.',
+    name: 'Rudip Shrestha',
+    role: 'Project Member, ANVESAK',
     rating: 5,
     photo: '/testimony/darlami.jpg'
+  },
+  {
+    quote: 'One of the most passionate and result driven individuals I have had the honor of working with and learning from. His greatest strength extends beyond engineering knowledge, that is his exceptional problem-solving ability, dedication to learning and unwavering commitment to every project he takes on. His experience across a wide range of unique and innovative projects demonstrates not only his technical skills but also his adaptability, creativity and determination to deliver meaningful results.',
+    name: 'Regal Ghimire',
+    role: 'Project Member, ANVESAK',
+    rating: 5,
+    photo: '/testimony/bhattrai.jpg'
   }
 ];
 

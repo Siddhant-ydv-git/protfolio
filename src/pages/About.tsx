@@ -3,8 +3,10 @@ import { useReveal, SectionLabel, SectionTitle, Divider, Card, Button } from '..
 const skills = ['3D Printing', 'SolidWorks', 'AutoCAD', 'ANSYS', 'Python', 'MATLAB', 'Arduino', 'Raspberry Pi'];
 
 const education = [
-  { degree: 'B.E. in Mechanical Engineering', institution: 'Institute of Engineering, Pulchowk Campus, Tribhuvan University', period: '2021 – 2025', detail: 'Graduated with focus on unmanned systems, robotics, and alternative energy research. Active in campus innovation programs and research projects.' },
-  { degree: 'Higher Secondary (10+2)', institution: 'Science Stream, Nepal', period: '2019 – 2021', detail: 'Physics, Chemistry, Mathematics with focus on engineering fundamentals.' },
+  { degree: 'B.E. in Mechanical Engineering', institution: 'Department of Mechanical and Aerosapce Engineering, Pulchowk Campus, Institute of Engineering, Tribhuvan University', period: '2021 – 2025', detail: 'Graduated with focus on unmanned systems, robotics, and alternative energy research. Active in campus innovation programs and research projects.' },
+  { degree: 'School Leaving Certificate (SLC)', institution: 'St. Xaviers School, Godavari, Nepal', period: '2019 – 2021', detail: 'Physics, Chemistry, Mathematics, and Computer.' },
+  { degree: 'Secondary Education Examination (SEE)', institution: 'Shree Janata Ma. V. Sundarpur, Mahottari, Nepal', period: '2019 – 2021', detail: 'Physics, Chemistry, Mathematics, and Computer.' },
+
 ];
 
 const languages = [

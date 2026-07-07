@@ -160,8 +160,8 @@ function RecentExperience() {
   const ref = useReveal();
   const experiences = [
     { date: 'May 2026 – June 2026', role: 'Management Trainee', org: 'Gorkha Brewery Pvt. Ltd. | Part of Carlsberg Group', location: 'Kathmandu, Nepal' },
-    { date: '2023 – 2024', role: 'NAST Intern', org: 'Nepal Academy of Science & Technology', location: 'Lalitpur, Nepal' },
-    { date: '2022 – 2023', role: 'HVAC Intern', org: 'Thermopharm Engineering', location: 'Kathmandu, Nepal' },
+    { date: 'Oct 2025 – Jan 2026', role: 'NAST Intern', org: 'Nepal Academy of Science & Technology', location: 'Lalitpur, Nepal' },
+    { date: 'Oct 2024 – Oct 2025', role: 'HVAC Intern', org: 'Thermopharm Pvt. Ltd.', location: 'East Vasai, Mumbai, Maharastra, India' },
   ];
   return (
     <div ref={ref} className="reveal max-w-4xl mx-auto">

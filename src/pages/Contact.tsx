@@ -98,7 +98,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-[#64748b] mb-0.5">Email</p>
-                    <a href="mailto:siddhant@example.com" className="text-sm text-[#1a1a2e] hover:text-[#ff6b5b] transition-colors">siddhant@example.com</a>
+                    <a href="mailto:siddhantyadav2930@gmail.com" className="text-sm text-[#1a1a2e] hover:text-[#ff6b5b] transition-colors">siddhantyadav2930@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -107,7 +107,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-[#64748b] mb-0.5">Phone</p>
-                    <p className="text-sm text-[#1a1a2e]">+977-XXXXXXXXXX</p>
+                    <p className="text-sm text-[#1a1a2e]">+977-9817899305</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -116,7 +116,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-[#64748b] mb-0.5">Location</p>
-                    <p className="text-sm text-[#1a1a2e]">Lalitpur, Nepal</p>
+                    <p className="text-sm text-[#1a1a2e]">Mahottari, Nepal</p>
                   </div>
                 </div>
               </div>
