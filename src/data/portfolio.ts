@@ -268,7 +268,7 @@ export const collaborators = [
 
 export const organizations = [
   { name: 'NAST', logo: '/orgs/nast.png' },
-  { name: 'BlueRobotics', logo: '/orgs/bluerobotics.png' },
+  { name: 'AIRBUS', logo: '/orgs/AIRBUS.png' },
   { name: 'SEDS Pulchowk', logo: '/orgs/seds.png' },
   { name: 'Pulchowk Campus', logo: '/orgs/pulchowk.png' },
   { name: 'Kathmandu University', logo: '/orgs/ku.png' },
@@ -377,7 +377,7 @@ export const blogs = [
       <p>There is ongoing research testing whether plants can hear (some roots grow toward the sound of running water) and whether they can sense human odor. Perhaps humankind is simply not advanced enough yet to fully crack their code and translate their chemical vocabulary into our words.</p>
       <p>Look at what plants have achieved. Wheat, rice, maize and potatoes now cover vast areas of the planet. Why? Because humans plant them, water them, protect them, and carry their seeds across continents. Flowers make themselves beautiful and sweet-smelling, and we buy them, plant them, and put them on our tables. Fruits make themselves delicious so we will spread their seeds.</p>
       <p>It makes me wonder: we think we are cultivating them, but could it be that they are manipulating us? They produce the exact chemical compounds (caffeine, sugar, oxygen, beautiful floral scents) that ensure we protect them, water them, and spread their seeds across the globe.</p>
-      <p>Maybe plants did not need to learn to talk to us. Maybe they just learned how to make us do things for them. This is a playful idea, but there is a famous book about it, <em>The Botany of Desire</em> by Michael Pollan, if you want to go down that rabbit hole.</p>
+      <p>Maybe plants did not need to learn to talk to us. Maybe they just learned how to make us do things for them. This is a playful idea, but there is a famous book about it,<strong> <em>The Botany of Desire</em> by Michael Pollan</strong>, if you want to go down that rabbit hole.</p>
 
       <h2>Back on the Trail</h2>
       <p>When I think about that hike now, I do not see silent trees. I see a crowded, busy city. Chemical messages floating through the air. Tiny clicks in the leaves. Roots curling toward water. Flowers listening for bees. Ants guarding their green home.</p>
