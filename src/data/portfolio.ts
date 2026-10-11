@@ -307,7 +307,7 @@ export const testimonials = [
 export const blogs = [
   {
     slug: 'have-you-heard-a-plant-speak',
-    image: '/blog/plant-communication.jpg',
+    image: '/blog/plant-communication.png',
     title: 'Have You Heard a Plant Speak? The Secret Language of Nature',
     excerpt: 'From Kannada conversations I could not understand at Airbus to ultrasonic clicks in tomato plants — a look at how plants communicate, and what it means to truly listen.',
     date: 'October 2026',
