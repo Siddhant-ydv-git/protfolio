@@ -45,7 +45,18 @@ export default function BlogDetail() {
           </div>
         </div>
       </section>
-
+            {/* Hero image */}
+      {blog.image && (
+        <section className="px-6 -mt-8">
+          <div className="max-w-3xl mx-auto">
+            <img
+              src={blog.image}
+              alt={blog.title}
+              className="w-full rounded-2xl shadow-lg object-cover max-h-[460px]"
+            />
+          </div>
+        </section>
+      )}
       {/* Content */}
       <section className="py-8 px-6">
         <div ref={contentRef} className="reveal max-w-3xl mx-auto">
