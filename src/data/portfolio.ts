@@ -321,6 +321,11 @@ export const blogs = [
       <p>The seed for this thought was planted on 23rd September 2022, when I was hiking through Shivapuri Nagarjun National Park with some friends. As we walked through the dense, quiet woods, two of my friends, Salina and Shristi, started talking, looking up at the canopy, and wondering: <em>"Do these trees talk to each other? What would they even say?"</em></p>
       <p>That question followed me for years, until I went and found the answer. And honestly, what I found changed how I look at every leaf.</p>
 
+      <figure>
+        <img src="/blog/mid.jpg" alt="The hike that started the curiosity." />
+         <figcaption>The hike that started the curiosity.</figcaption>
+      </figure>
+
       <h2>First, What Is Communication?</h2>
       <p>At its core, communication is just the exchange of information and knowledge. Humans use vocal cords, sure, but a huge part of our population communicates through other brilliant methods like sign language or Braille. If we can communicate through touch and visual cues, how can we arrogantly assume plants don't communicate just because they don't have vocals?</p>
       <p>The truth is, plants are exceptional communicators. They just do it silently.</p>
@@ -381,6 +386,10 @@ export const blogs = [
       <p>The lesson? Communication is not only about words. My Kannada-speaking teammates at Airbus taught me that, and the plants of Shivapuri Nagarjun proved it.</p>
       <p>Next time you walk through a forest, a park, or even past a plant on your office desk, slow down. You may not hear anything. But somewhere, something is saying hello.</p>
       <p>Maybe say hello back.</p>
+      <figure>
+        <img src="/blog/last.jpg" alt="Pause and Listen" />
+         <figcaption>Pause and Listen</figcaption>
+      </figure>
       <p><em>What do you think? Have you ever felt like you understood something without a single word being spoken? I would love to hear your story.</em></p>
     `,
     tags: ['Plant Communication', 'Nature', 'Science', 'Airbus', 'Shivapuri Nagarjun']
