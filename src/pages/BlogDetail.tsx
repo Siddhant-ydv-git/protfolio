@@ -91,6 +91,17 @@ export default function BlogDetail() {
         .blog-content p {
           margin-bottom: 1rem;
         }
+          .blog-content img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 1.5rem 0 0.5rem;
+        }
+          .blog-content figcaption {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
       `}</style>
     </>
   );

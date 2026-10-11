@@ -322,7 +322,7 @@ export const blogs = [
       <p>That question followed me for years, until I went and found the answer. And honestly, what I found changed how I look at every leaf.</p>
 
       <h2>First, What Is Communication?</h2>
-      <p>At its core, communication is just the exchange of information and knowledge. Humans use vocal cords, sure, but a huge part of our population communicates through other brilliant methods like sign language or Braille. If we can communicate through touch and visual cues, how can we arrogantly assume plants don't communicate just because they don't have mouths?</p>
+      <p>At its core, communication is just the exchange of information and knowledge. Humans use vocal cords, sure, but a huge part of our population communicates through other brilliant methods like sign language or Braille. If we can communicate through touch and visual cues, how can we arrogantly assume plants don't communicate just because they don't have vocals?</p>
       <p>The truth is, plants are exceptional communicators. They just do it silently.</p>
 
       <h2>Perfumes With a Meaning</h2>
@@ -344,8 +344,13 @@ export const blogs = [
       <p>Or look at a climbing plant. Put a stick near it and the tendrils will find it, wrap around it, and climb. It is feeling its surroundings and making a decision, slowly, patiently.</p>
       <p>Scientists have also found hints that some plants behave differently around their own relatives than around strangers. There is research suggesting that sea rocket plants share their root space more politely with siblings. A plant that recognizes family. Think about that for a second.</p>
 
+      <figure>
+        <img src="/blog/venus-flytrap.png" alt="A Venus flytrap" />
+        <figcaption>A Venus flytrap after a second touch.</figcaption>
+      </figure>
+
       <h2>Deals Between Plants and Animals</h2>
-      <p>Plants also make <em>deals</em> with animals.</p>
+      <p>The secrete deal</p>
       <p>The bullhorn acacia tree in Central America grows big, hollow thorns that look like the horns of a bull. Inside live tiny, fierce ants. The tree gives them a home, sweet nectar, and special protein snacks. In return, the ants guard the tree like soldiers. If a hungry animal touches the tree, the ants rush out in thousands and attack. They even cut down other plants growing around the base so the tree gets enough sunlight.</p>
       <p>Neither can survive well without the other. They are partners in a very serious contract.</p>
 
@@ -364,7 +369,6 @@ export const blogs = [
       <p>In the future, plants sitting in strategic locations like airports might just be sniffing for dangerous substances, chemical weapons, or drugs.</p>
 
       <h2>A Playful Thought: Who Is Manipulating Whom?</h2>
-      <p>Are we manipulating them, or are they manipulating us? Are they secretly controlling us?</p>
       <p>There is ongoing research testing whether plants can hear (some roots grow toward the sound of running water) and whether they can sense human odor. Perhaps humankind is simply not advanced enough yet to fully crack their code and translate their chemical vocabulary into our words.</p>
       <p>Look at what plants have achieved. Wheat, rice, maize and potatoes now cover vast areas of the planet. Why? Because humans plant them, water them, protect them, and carry their seeds across continents. Flowers make themselves beautiful and sweet-smelling, and we buy them, plant them, and put them on our tables. Fruits make themselves delicious so we will spread their seeds.</p>
       <p>It makes me wonder: we think we are cultivating them, but could it be that they are manipulating us? They produce the exact chemical compounds (caffeine, sugar, oxygen, beautiful floral scents) that ensure we protect them, water them, and spread their seeds across the globe.</p>
