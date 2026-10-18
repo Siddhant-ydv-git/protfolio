@@ -95,9 +95,11 @@ export const biogas = {
       { name: 'Shaft', text: 'A long rod connects the grip to the mixing head and reaches down into the feed.', x: 61.3, y: 60.7 },
       { name: 'Mixing head', text: 'A perforated plate with paddles that works through the thick slurry to break up clumps and mix new feed into what is already inside.', x: 80, y: 79 },
     ],
-    // YouTube Shorts ID of the 3D-printing timelapse. Leave id '' until you have it.
-    // (Link looks like youtube.com/shorts/THIS_PART)
-    video: { id: 'i2u8UZolJiU', title: 'Timelapse: 3D printing the stirrer' },
+    // Add one entry per YouTube video, using the ID from youtube.com/shorts/THIS_PART.
+    videos: [
+      { id: 'i2u8UZolJiU', title: 'Timelapse: 3D printing the stirrer' },
+      { id: 'C0pmu8rHkKI', title: 'Timelapse: CAD designing the stirrer' },
+    ],
   },
 
   // ── Results ────────────────────────────────────────────────

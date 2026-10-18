@@ -166,7 +166,7 @@ function StirrerShowcase({ onZoom }: { onZoom: (s: string) => void }) {
   const S = B.stirrer;
   const [active, setActive] = useState(0);
   const [auto, setAuto] = useState(true);
-  const hasVideo = S.video.id.length > 0;
+  const hasVideos = S.videos.length > 0;
 
   useEffect(() => {
     if (!auto || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -185,8 +185,8 @@ function StirrerShowcase({ onZoom }: { onZoom: (s: string) => void }) {
       <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-2" style={display}>{S.title}</h3>
       <p className="text-[#64748b] leading-relaxed max-w-3xl mb-6">{S.intro}</p>
 
-      <div className={`grid gap-6 ${hasVideo ? 'lg:grid-cols-12' : ''}`}>
-        <div className={hasVideo ? 'lg:col-span-8' : ''}>
+      <div className={`grid gap-6 ${hasVideos ? 'lg:grid-cols-12' : ''}`}>
+        <div className={hasVideos ? 'lg:col-span-8' : ''}>
           {/* model with hotspots */}
           <div className="relative rounded-2xl overflow-hidden bg-[#e5e7eb] cursor-zoom-in" onClick={() => onZoom(S.image)}>
             <img src={S.image} alt="SolidWorks model of the 3D-printed stirrer and inlet cover" width={2168} height={1252} className="w-full h-auto block" />
@@ -221,9 +221,13 @@ function StirrerShowcase({ onZoom }: { onZoom: (s: string) => void }) {
           </div>
         </div>
 
-        {hasVideo && (
+        {hasVideos && (
           <div className="lg:col-span-4">
-            <VideoCard id={S.video.id} title={S.video.title} vertical />
+            <div className="grid gap-6">
+              {S.videos.map((video) => (
+                <VideoCard key={video.id} id={video.id} title={video.title} vertical />
+              ))}
+            </div>
           </div>
         )}
       </div>
