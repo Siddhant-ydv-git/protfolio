@@ -2,12 +2,14 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { useReveal, SectionLabel, Tag, Card } from '../components/Shared';
 import { projects } from '../data/portfolio';
+import AnvesakPage from './AnvesakPage';
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = projects.find((p) => p.slug === slug);
   const ref = useReveal();
-
+   // ANVESAK has its own dedicated page
+   if (slug === 'anvesak') return <AnvesakPage />;
   if (!project) {
     return (
       <section className="py-24 px-6 text-center">
