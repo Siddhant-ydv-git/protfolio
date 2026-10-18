@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { useReveal, SectionLabel, Tag, Card } from '../components/Shared';
 import { projects } from '../data/portfolio';
 import AnvesakPage from './AnvesakPage';
+import BiogasPage from './BiogasPage';
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -10,6 +11,7 @@ export default function ProjectDetail() {
   const ref = useReveal();
    // ANVESAK has its own dedicated page
    if (slug === 'anvesak') return <AnvesakPage />;
+   if (slug === 'biogas-study') return <BiogasPage />;
   if (!project) {
     return (
       <section className="py-24 px-6 text-center">

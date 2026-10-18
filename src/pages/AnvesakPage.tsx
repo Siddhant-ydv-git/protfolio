@@ -87,6 +87,16 @@ function UsvScene() {
 
   return (
     <div ref={wrap} className="relative rounded-2xl overflow-hidden glass-card">
+      <div className="flex gap-2 p-3 pb-0 sm:p-0 sm:absolute sm:left-4 sm:top-4 sm:z-10 text-[#1a1a2e]">
+        <div className="rounded-lg bg-white/80 backdrop-blur px-3 py-1.5 shadow-sm">
+          <div className="text-[0.6rem] uppercase tracking-wider text-[#64748b]">Depth</div>
+          <span ref={depthEl} className="text-sm sm:text-base font-semibold" style={display}>0.0 m</span>
+        </div>
+        <div className="rounded-lg bg-white/80 backdrop-blur px-3 py-1.5 shadow-sm">
+          <div className="text-[0.6rem] uppercase tracking-wider text-[#64748b]">Points logged</div>
+          <span ref={pointsEl} className="text-sm sm:text-base font-semibold" style={display}>0</span>
+        </div>
+      </div>
       <svg viewBox="0 0 800 360" className="w-full h-auto block" role="img" aria-label="Animation of the ANVESAK vessel scanning the riverbed with sonar and the banks with LiDAR">
         <defs>
           <linearGradient id="av-water" x1="0" y1="0" x2="0" y2="1">
@@ -133,17 +143,6 @@ function UsvScene() {
         <g ref={hull} transform="translate(60 140)"><BoatBody /></g>
       </svg>
 
-      {/* readouts */}
-      <div className="absolute left-3 top-3 sm:left-4 sm:top-4 flex gap-2 text-[#1a1a2e]">
-        <div className="rounded-lg bg-white/80 backdrop-blur px-3 py-1.5 shadow-sm">
-          <div className="text-[0.6rem] uppercase tracking-wider text-[#64748b]">Depth</div>
-          <span ref={depthEl} className="text-sm sm:text-base font-semibold" style={display}>0.0 m</span>
-        </div>
-        <div className="rounded-lg bg-white/80 backdrop-blur px-3 py-1.5 shadow-sm">
-          <div className="text-[0.6rem] uppercase tracking-wider text-[#64748b]">Points logged</div>
-          <span ref={pointsEl} className="text-sm sm:text-base font-semibold" style={display}>0</span>
-        </div>
-      </div>
       <p className="absolute right-3 bottom-2 text-[0.6rem] text-[#0f172a]/50">Illustrative animation</p>
     </div>
   );

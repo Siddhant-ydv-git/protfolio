@@ -23,7 +23,7 @@ export const anvesak = {
 
   // ── Why it matters ─────────────────────────────────────────
   problem: {
-    heading: 'Nepal’s rivers are poorly mapped, and the cost is paid in disaster risk preparednedd and rescue time.',
+    heading: 'Nepal’s rivers are poorly mapped, and the cost is paid in disaster risk preparedness and rescue time.',
     points: [
       'Little is known about the underwater terrain of Nepal’s rivers and lakes. Traditional surveys are tiring, slow, expensive and dangerous in deep, fast or muddy water.',
       'On rivers like the Trishuli, rescue teams searching for sunken vehicles or victims often work without any riverbed map, relying on visual search.',

@@ -59,9 +59,9 @@ export const projects = [
   },
   {
     slug: 'biogas-study',
-    title: 'Biogas & Biomass Energy Study',
+    title: 'Biogas Feasibility Study at NAST',
     image: '/projects/biogas-study.jpg',
-    shortDesc: 'Research internship at NAST analyzing biogas potential and biomass energy conversion for rural Nepal.',
+    shortDesc: 'A working kitchen-waste biogas digester at NAST: fed, monitored and burned to test if urban food waste can fuel everyday cooking.',
     tags: ['Energy', 'Biogas', 'Biomass', 'Research'],
     category: 'Energy',
     overview: 'A research internship at the Nepal Academy of Science and Technology (NAST) focused on evaluating the viability of biogas digesters and biomass gasification systems for rural energy needs. The study included field surveys, lab analysis, and feasibility modeling.',
