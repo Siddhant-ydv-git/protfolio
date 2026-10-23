@@ -159,7 +159,8 @@ function FeaturedProject() {
 function RecentExperience() {
   const ref = useReveal();
   const experiences = [
-    { date: 'May 2026 – June 2026', role: 'Management Trainee', org: 'Gorkha Brewery Pvt. Ltd. | Part of Carlsberg Group', location: 'Kathmandu, Nepal' },
+    { date: 'July 2026 – Jan 2027', role: 'Industrial Solution - Intern', org: 'Airbus India Pvt. Ltd.', location: 'Bengaluru, India' },
+    { date: 'May 2026 – July 2026', role: 'Management Trainee', org: 'Gorkha Brewery Pvt. Ltd. | Part of Carlsberg Group', location: 'Kathmandu, Nepal' },
     { date: 'Oct 2025 – Jan 2026', role: 'NAST Intern', org: 'Nepal Academy of Science & Technology', location: 'Lalitpur, Nepal' },
     { date: 'Oct 2024 – Oct 2025', role: 'HVAC Intern', org: 'Thermopharm Pvt. Ltd.', location: 'East Vasai, Mumbai, Maharastra, India' },
   ];
@@ -337,7 +338,7 @@ export default function Home() {
             <TypingText />
           </p>
           <p className="text-base text-[#64748b] mb-8 opacity-0 animate-[fadeUp_0.8s_0.8s_forwards]">
-            Mechanical Engineering · Unmanned Systems · Space & Robotics
+            Mechanical Engineering · Unmanned Systems · Space & Robotics · Energy
           </p>
           <div className="flex gap-4 opacity-0 animate-[fadeUp_0.8s_0.9s_forwards]">
             <Link to="/projects" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-[#ff6b5b] to-[#14b8a6] text-white hover:shadow-[0_8px_24px_rgba(255,107,91,0.25)] transition-all duration-300 btn-ripple hover:scale-[1.02]">

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Play, X } from 'lucide-react';
+import { VideoCard } from '../components/PageKit';
 import { useReveal, SectionLabel, SectionTitle, Divider, Tag } from '../components/Shared';
 import { anvesak as A } from '../data/anvesak';
 
@@ -182,37 +183,7 @@ function BoatBody() {
   );
 }
 
-/* ───────────── video + lightbox ───────────── */
-
-function VideoCard({ id, title }: { id: string; title: string }) {
-  const [on, setOn] = useState(false);
-  return (
-    <div className="glass-card rounded-2xl overflow-hidden">
-      <div className="relative aspect-video bg-black">
-        {on ? (
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
-            title={title}
-            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
-          <button onClick={() => setOn(true)} className="group absolute inset-0 w-full h-full" aria-label={`Play video: ${title}`}>
-            <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" className="w-full h-full object-cover" loading="lazy" />
-            <span className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-            <span className="absolute inset-0 flex items-center justify-center">
-              <span className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <Play className="w-7 h-7 text-[#ff6b5b] ml-1" fill="currentColor" />
-              </span>
-            </span>
-          </button>
-        )}
-      </div>
-      <p className="p-4 text-sm font-medium text-[#1a1a2e]">{title}</p>
-    </div>
-  );
-}
+/* ───────────── lightbox ───────────── */
 
 function Lightbox({ src, onClose }: { src: string | null; onClose: () => void }) {
   useEffect(() => {
@@ -358,6 +329,9 @@ export default function AnvesakPage() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-8">
+          <VideoCard id={A.journeyVideo.id} title={A.journeyVideo.title} vertical />
+        </Reveal>
       </Section>
 
       {/* ── Results ── */}

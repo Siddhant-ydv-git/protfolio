@@ -59,6 +59,7 @@ export const anvesak = {
     { phase: 'Phase IV', title: 'First pond tests', text: 'Early trials at Pimbahal Pokhari checked propulsion, communication and data logging before going to larger water bodies.', image: '/projects/anvesak/journey-first-test.jpg' },
     { phase: 'Phase IV', title: 'Ready for the field', text: 'The complete system, transported and assembled on site, then deployed at Kulekhani, Taudaha, and later with APF on three major water bodies.', image: '/projects/anvesak/journey-assembled.jpg' },
   ],
+  journeyVideo: { id: 'FaKtN06JsVc', title: 'One-Year Journey of ANVESAK' },
 
   // ── Field results ──────────────────────────────────────────
   sites: [

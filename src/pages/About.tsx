@@ -50,7 +50,7 @@ export default function About() {
               I am a Mechanical Engineer graduated from Pulchowk Campus, Institute of Engineering, Tribhuvan University, Nepal. My passion lies at the intersection of mechanical design, electronics, and intelligent systems, building autonomous platforms that operate in challenging real-world environments.
             </p>
             <p className="text-[#64748b] leading-relaxed mb-4">
-              I'm employed as Management Trainee at Gorkha Brewery Pvt. Ltd., Part of Carlsberg Group.
+              I'm employed as Industrial Solution - Intern at Airbus India Pvt. Ltd.
             </p>
             <p className="text-[#64748b] leading-relaxed mb-4">
               From designing unmanned surface vehicles for river bathymetry to working on research projects related to biomass briquetting and biogas, I thrive on engineering solutions that create tangible impact. My research spans SONAR-based mapping, LiDAR integration, autonomous navigation, and Alternative energy including biogas and biomass briquettes.
