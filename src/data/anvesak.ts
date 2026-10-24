@@ -109,9 +109,12 @@ export const anvesak = {
   ] as { id: string; title: string }[],
 
   // ── In the media ───────────────────────────────────────────
-  // The section stays hidden while this list is empty.
   media: [
-     { outlet: 'TechPana', title: 'नेपाली विद्यार्थीले बनाए पानीमुनि स्क्यान गर्ने मानवरहित डुङ्गा, विपद् व्यवस्थापनमा काम लाग्ने', date: 'May 2026', url: 'https://techpana.com/2026/156826', image: '/projects/anvesak/media.jpeg' },
+    { outlet: 'TechPana', title: 'नेपाली विद्यार्थीले बनाए पानीमुनि स्क्यान गर्ने मानवरहित डुङ्गा, विपद् व्यवस्थापनमा काम लाग्ने', date: 'May 2026', url: 'https://techpana.com/2026/156826', image: '/projects/anvesak/media.jpeg' },
+    { outlet: 'Department of Mechanical and Aerospace Engineering, Pulchowk Campus', title: 'Measuring the unknown depths', date: 'April 2026', url: 'https://www.facebook.com/watch/?v=2180696986015833', image: '/projects/anvesak/DMAE.jpeg' },
+    { outlet: 'इन्जिनियरको ब्यथा अरुलाई के था', title: 'ANVESAK: Successfully Tested Across Major Water Bodies of Nepal!', date: 'October 2026', url: 'https://www.facebook.com/watch/?v=1973132003646460', image: '/projects/anvesak/EB.png' },
+    { outlet: 'No Next Question (NNQ)', title: 'Four pulchowk engineering students develop autonomous boat for underwater mapping, detection and disaster response', date: 'May 2026', url: 'https://www.instagram.com/p/DYrp7P6Tqtk/', image: '/projects/anvesak/NNQ.jpeg' },
+    { outlet: 'Routine of Education', title: 'Four mechanical engineering fourth-year students from Pulchowk Campus have developed an autonomous boat (मानवरहित डुङ्गा) designed to support disaster preparedness and rescue operations.', date: 'May 2026', url: 'https://www.facebook.com/share/p/1A5qBMKanW/', image: '/projects/anvesak/ROE.JPG' },
   ] as { outlet: string; title: string; date: string; url: string; image?: string }[],
 
   // ── Presentations and recognition ──────────────────────────
