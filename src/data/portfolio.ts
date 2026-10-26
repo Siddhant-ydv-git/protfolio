@@ -76,6 +76,25 @@ export const projects = [
     outcomes: 'Identified that mixed agricultural waste feedstock increases biogas yield by 25% over pure dung. Proposed a modified fixed-dome digester design suitable for hilly terrain. Findings contributed to a NAST policy brief on rural renewable energy.',
     team: ['Siddhant Yadav', 'NAST Research Group']
   },
+    {
+    slug: 'biomass-briquettes',
+    title: 'Biomass Briquette Study at NAST',
+    image: '/projects/biomass-briquettes.jpg',
+    shortDesc: 'Reviving an eight-year-old briquetting machine at NAST and testing the energy content of biochar and rice-bran fuel blends.',
+    tags: ['Energy', 'Biomass', 'Biochar', 'Research'],
+    category: 'Energy',
+    overview: 'A research project at the Nepal Academy of Science and Technology (NAST) to turn agricultural residue and invasive-plant biochar into solid fuel briquettes and measure their energy content.',
+    objectives: [
+      'Restore a briquetting machine unused for about eight years',
+      'Prepare biochar and rice-bran feed mixtures',
+      'Press briquettes with a screw extruder',
+      'Measure calorific value with an oxygen bomb calorimeter',
+      'Identify safety hazards and limitations'
+    ],
+    methodology: 'The machine was repaired and rewired, then fed with Lantana biochar and rice bran in different ratios. Samples were tested three times each in an automatic oxygen bomb calorimeter.',
+    outcomes: 'Blends of 60–70% biochar with rice bran reached about 21.8 MJ/kg, roughly 42% more than rice bran alone.',
+    team: ['Siddhant Yadav', 'Hemkala Awasthi', 'Regal Ghimire', 'Rudip Shrestha']
+  },
   {
     slug: 'hvac-internship',
     title: 'HVAC Systems Internship',
