@@ -2,11 +2,15 @@ import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, Tag as TagIcon } from 'lucide-react';
 import { blogs } from '../data/portfolio';
 import { useReveal, SectionLabel, Card } from '../components/Shared';
+import NepalGuidePage from './NepalGuidePage';
 
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
   const blog = blogs.find(b => b.slug === slug);
   const contentRef = useReveal();
+
+    // This article has its own designed page
+  if (slug === 'places-to-visit-in-nepal') return <NepalGuidePage />;
 
   if (!blog) {
     return (

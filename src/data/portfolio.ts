@@ -324,6 +324,17 @@ export const testimonials = [
 ];
 
 export const blogs = [
+    {
+    slug: 'places-to-visit-in-nepal',
+    image: '/blog/nepal/cover.jpg',
+    title: 'Planning a trip to Nepal? Here’s where I’d send you',
+    excerpt: 'A short, honest guide for first-time visitors: why Nepal looks the way it does, the places I would send you, and the treks worth planning for.',
+    date: 'October 2026',
+    readTime: '10 min read',
+    category: 'Travel',
+    content: `<p>This article has its own designed page.</p>`,
+    tags: ['Nepal', 'Travel', 'Himalaya', 'Trekking']
+  },
   {
     slug: 'have-you-heard-a-plant-speak',
     image: '/blog/plant-communication.jpg',
