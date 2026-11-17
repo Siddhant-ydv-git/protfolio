@@ -315,7 +315,7 @@ export const testimonials = [
     photo: '/testimony/darlami.jpg'
   },
   {
-    quote: 'One of the most passionate and result driven individuals I have had the honor of working with and learning from. His greatest strength extends beyond engineering knowledge, that is his exceptional problem-solving ability, dedication to learning and unwavering commitment to every project he takes on. His experience across a wide range of unique and innovative projects demonstrates not only his technical skills but also his adaptability, creativity and determination to deliver meaningful results.',
+    quote: 'One of the most passionate and results-driven individuals I’ve had the pleasure of working with. His problem-solving ability, adaptability, and dedication consistently set him apart.',
     name: 'Regal Ghimire',
     role: 'Project Member, ANVESAK',
     rating: 5,

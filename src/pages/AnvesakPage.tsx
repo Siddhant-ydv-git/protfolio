@@ -186,11 +186,11 @@ function BoatBody() {
 
 /* ───────────── video + lightbox ───────────── */
 
-function VideoCard({ id, title }: { id: string; title: string }) {
+function VideoCard({ id, title, vertical = false }: { id: string; title: string; vertical?: boolean }) {
   const [on, setOn] = useState(false);
   return (
-    <div className="glass-card rounded-2xl overflow-hidden">
-      <div className="relative aspect-video bg-black">
+    <div className={`glass-card rounded-2xl overflow-hidden ${vertical ? 'max-w-[320px] mx-auto w-full' : ''}`}>
+      <div className={`relative ${vertical ? 'aspect-[9/16]' : 'aspect-video'} bg-black`}>
         {on ? (
           <iframe
             className="absolute inset-0 w-full h-full"
@@ -201,7 +201,17 @@ function VideoCard({ id, title }: { id: string; title: string }) {
           />
         ) : (
           <button onClick={() => setOn(true)} className="group absolute inset-0 w-full h-full" aria-label={`Play video: ${title}`}>
-            <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={`https://i.ytimg.com/vi/${id}/${vertical ? 'maxres' : 'hq'}default.jpg`}
+              alt=""
+              className="w-full h-full object-cover"
+              loading="lazy"
+              onError={(e) => {
+                if (vertical && !e.currentTarget.src.endsWith('/hqdefault.jpg')) {
+                  e.currentTarget.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+                }
+              }}
+            />
             <span className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
@@ -359,6 +369,23 @@ export default function AnvesakPage() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </Section>
+
+      {/* ── One-year journey video ── */}
+      <Section label="The journey" title={A.journeyVideo.title}>
+        <div className="max-w-sm mx-auto">
+          <Reveal>
+            <VideoCard id={A.journeyVideo.id} title={A.journeyVideo.title} vertical />
+            <a
+              href={A.journeyVideo.url}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#1a1a2e] hover:text-[#ff6b5b] transition-colors"
+            >
+              Watch on YouTube <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </Reveal>
         </div>
       </Section>
 

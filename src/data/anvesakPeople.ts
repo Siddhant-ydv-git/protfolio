@@ -11,13 +11,13 @@
 import type { Person, Org } from '../components/PeopleKit';
 
 export const supervisors: Person[] = [
-  { name: 'Assoc. Prof. Dr. Shree Raj Shakya', role: 'Supervisor · Director, Center for Energy Studies, IOE', image: '/people/shree-raj-shakya.jpg', scholar: '' },
+  { name: 'Assoc. Prof. Dr. Shree Raj Shakya', role: 'Supervisor · Director, Center for Energy Studies, IOE', image: '/people/shree-raj-shakya.jpg', url: 'https://scholar.google.com/citations?user=E_mZJP0AAAAJ&hl=fr&oi=ao' },
   { name: 'Asst. Prof. Kamal Darlami', role: 'Supervisor · Dept. of Mechanical and Aerospace Engineering', image: '/people/kamal-darlami.jpg', url: 'https://www.kamaldarlami.com.np/', scholar: '' },
 ];
 
 export const advisors: Person[] = [
-  { name: 'Asst. Prof. Dr. Sudip Bhattrai', role: 'Head, Dept. of Mechanical and Aerospace Engineering', image: '/people/sudip-bhattrai.jpg', scholar: '' },
-  { name: 'Asst. Prof. Biman Rimal', role: 'Provided the LiDAR sensor, with feedback and support', image: '/people/biman-rimal.jpg', scholar: '' },
+  { name: 'Asst. Prof. Dr. Sudip Bhattrai', role: 'Head, Dept. of Mechanical and Aerospace Engineering', image: '/people/sudip-bhattrai.jpg', url: 'https://scholar.google.com/citations?user=C-LiMykAAAAJ&hl=fr' },
+  { name: 'Asst. Prof. Biman Rimal', role: 'Provided the LiDAR sensor, with feedback and support', image: '/people/biman-rimal.jpg', url: 'https://scholar.google.com/citations?user=Oh1DAi0AAAAJ&hl=fr&oi=ao' },
 ];
 
 export const team: Person[] = [
@@ -28,7 +28,7 @@ export const team: Person[] = [
 ];
 
 export const orgs: Org[] = [
-  { name: 'BlueRobotics', role: 'Donated the Ping sonar', logo: '/orgs/bluerobotics.png' },
+  { name: 'BlueRobotics', role: 'Donated the Ping sonar', logo: '/orgs/bluerobotics.png', url: 'https://bluerobotics.com/' },
   { name: 'Armed Police Force, Nepal', role: 'Field testing campaign, May 2026', logo: '/orgs/apf.png' },
   { name: 'NAST – NCCKMC & KVDA', role: 'Partial research funding (Kathmandu Urban EbA project)', logo: '/orgs/nast.png' },
   { name: 'Nepal Electricity Authority', role: 'Support at Kulekhani', logo: '/orgs/nea.png' },
