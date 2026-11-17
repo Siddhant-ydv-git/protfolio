@@ -24,26 +24,90 @@ const awards = [
   { title: 'People’s Choice Award', detail: 'NASA’s International Space Apps Challenge 2021' },
 ];
 
+const leadership = [
+  {
+    role: 'President',
+    org: 'Students for Exploration and Development of Space (SEDS), Pulchowk',
+    period: 'Jun 2023 – Mar 2025',
+    points: [
+      'Grew the annual budget from NPR 8,000 to over NPR 350,000 and secured a permanent telescope.',
+      'Led Free CanSat Training for 80+ students and hosted NASA’s International Space Apps Challenge.',
+    ],
+  },
+  {
+    role: 'Program Coordinator',
+    org: 'Incubation, Innovation and Entrepreneurship Center (IIEC), Pulchowk',
+    period: 'Dec 2024 – Apr 2026',
+    points: [
+      'Led “InnoCraft”, selling engineering-themed souvenirs at EEPEX, DELTA 5.0 and LOCUS.',
+      'Coordinated the “Art of Science” Photography Competition.',
+    ],
+  },
+  {
+    role: 'Elected Executive Member',
+    org: 'Free Students’ Union (FSU) – 2079, Pulchowk Campus',
+    period: 'Mar 2023 – Mar 2025',
+    points: [
+      'Organized the Pulchowk Innovation Program, funding NPR 400,000 across 10 projects.',
+      'Secured a 3D printer for prototyping and pushed free sanitary pads and clean drinking water.',
+    ],
+  },
+];
+
 const education = [
-  { degree: 'B.E. in Mechanical Engineering', institution: 'Department of Mechanical and Aerospace Engineering, Pulchowk Campus, Institute of Engineering, Tribhuvan University', period: '2022 - 2026', detail: 'Graduated with focus on unmanned systems, robotics, and alternative energy research. Active in campus innovation programs and research projects.' },
+  { degree: 'B.E. in Mechanical Engineering', institution: 'Department of Mechanical and Aerosapce Engineering, Pulchowk Campus, Institute of Engineering, Tribhuvan University', period: '2022 - 2026', detail: 'Graduated with focus on unmanned systems, robotics, and alternative energy research. Active in campus innovation programs and research projects.' },
   { degree: 'School Leaving Certificate (SLC)', institution: 'St. Xaviers School, Godavari, Nepal', period: '2019 – 2021', detail: 'Physics, Chemistry, Mathematics, and Computer.' },
   { degree: 'Secondary Education Examination (SEE)', institution: 'Shree Janata Ma. V. Sundarpur, Mahottari, Nepal', period: '2019 – 2021', detail: '' },
 
 ];
 
+// percent = how full the bar is (0 – 100)
 const languages = [
-  { name: 'Maithali', level: 'Native' },
-  { name: 'Nepali', level: 'Fluent' },
-  { name: 'English', level: 'Fluent' },
-  { name: 'Hindi', level: 'Conversational' },
-  { name: 'Bhojpuri', level: 'Conversational' },
+  { name: 'Maithali', level: 'Native', percent: 100 },
+  { name: 'Nepali', level: 'Fluent', percent: 100 },
+  { name: 'English', level: 'Fluent', percent: 100 },
+  { name: 'Hindi', level: 'Conversational', percent: 60 },
+  { name: 'Bhojpuri', level: 'Conversational', percent: 60 },
 ];
+
+// Leadership block. It is rendered twice: in the left column on desktop (filling the gap under the biography),
+// and after the awards on phones, where the page is a single column.
+function Leadership({ innerRef, className = '' }: { innerRef: ReturnType<typeof useReveal>; className?: string }) {
+  return (
+    <div ref={innerRef} className={`reveal ${className}`}>
+      <SectionLabel>Leadership</SectionLabel>
+      <SectionTitle>Organizational Experience</SectionTitle>
+      <Divider />
+      <div className="space-y-3">
+        {leadership.map((l) => (
+          <div key={l.role + l.org} className="relative overflow-hidden rounded-xl glass-card glass-hover py-3 pl-5 pr-4 transition-all duration-300">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#ff6b5b] to-[#14b8a6]" />
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+              <h4 className="text-sm font-semibold text-[#1a1a2e]">{l.role}</h4>
+              <span className="font-mono text-[0.68rem] gradient-text" style={{ fontFamily: 'Space Grotesk, monospace' }}>{l.period}</span>
+            </div>
+            <p className="text-xs text-[#64748b] mb-1.5">{l.org}</p>
+            <ul className="space-y-1">
+              {l.points.map((pt) => (
+                <li key={pt} className="flex gap-2 text-[0.8rem] text-[#64748b] leading-snug">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#14b8a6] flex-shrink-0" />{pt}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function About() {
   const heroRef = useReveal();
   const bioRef = useReveal();
   const skillsRef = useReveal();
   const awardsRef = useReveal();
+  const leadDesktopRef = useReveal();
+  const leadMobileRef = useReveal();
   const eduRef = useReveal();
   const langRef = useReveal();
 
@@ -85,6 +149,8 @@ export default function About() {
               Also I'm considerably good at managing people and leading organizations and clubs.
             </p>
             <Button href="/cv.pdf" variant="primary" download>Download CV</Button>
+
+            <Leadership innerRef={leadDesktopRef} className="hidden md:block mt-14" />
           </div>
 
           <div ref={skillsRef} className="reveal">
@@ -136,6 +202,8 @@ export default function About() {
                 ))}
               </div>
             </div>
+
+            <Leadership innerRef={leadMobileRef} className="md:hidden mt-12" />
           </div>
         </div>
       </section>
@@ -175,7 +243,7 @@ export default function About() {
                 <div className="mt-3 h-1.5 bg-[#e2e8f0] rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-[#ff6b5b] to-[#14b8a6] rounded-full transition-all duration-700"
-                    style={{ width: lang.level === 'Native' ? '100%' : lang.level === 'Fluent' ? '85%' : '60%' }}
+                    style={{ width: `${lang.percent}%` }}
                   />
                 </div>
               </Card>

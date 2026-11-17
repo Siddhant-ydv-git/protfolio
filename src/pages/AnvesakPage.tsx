@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Play, X } from 'lucide-react';
-import { VideoCard } from '../components/PageKit';
 import { useReveal, SectionLabel, SectionTitle, Divider, Tag } from '../components/Shared';
 import { anvesak as A } from '../data/anvesak';
+import { PersonCard, TeamChip, OrgCard } from '../components/PeopleKit';
+import { supervisors, advisors, team, orgs } from '../data/anvesakPeople';
 
 const display = { fontFamily: 'Space Grotesk, sans-serif' };
 
@@ -183,7 +184,37 @@ function BoatBody() {
   );
 }
 
-/* ───────────── lightbox ───────────── */
+/* ───────────── video + lightbox ───────────── */
+
+function VideoCard({ id, title }: { id: string; title: string }) {
+  const [on, setOn] = useState(false);
+  return (
+    <div className="glass-card rounded-2xl overflow-hidden">
+      <div className="relative aspect-video bg-black">
+        {on ? (
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+            title={title}
+            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <button onClick={() => setOn(true)} className="group absolute inset-0 w-full h-full" aria-label={`Play video: ${title}`}>
+            <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" className="w-full h-full object-cover" loading="lazy" />
+            <span className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <Play className="w-7 h-7 text-[#ff6b5b] ml-1" fill="currentColor" />
+              </span>
+            </span>
+          </button>
+        )}
+      </div>
+      <p className="p-4 text-sm font-medium text-[#1a1a2e]">{title}</p>
+    </div>
+  );
+}
 
 function Lightbox({ src, onClose }: { src: string | null; onClose: () => void }) {
   useEffect(() => {
@@ -329,10 +360,8 @@ export default function AnvesakPage() {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-8">
-          <VideoCard id={A.journeyVideo.id} title={A.journeyVideo.title} vertical />
-        </Reveal>
       </Section>
+
 
       {/* ── Results ── */}
       <Section id="results" label="Field results" title="Tested on rivers, lakes and a reservoir">
@@ -465,34 +494,26 @@ export default function AnvesakPage() {
       {/* ── Team + partners ── */}
       <Section label="People" title="Team and supporters">
         <Reveal>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-sm font-semibold text-[#1a1a2e] mb-3" style={display}>Project team</h3>
-              <div className="flex flex-wrap gap-3 mb-6">
-                {A.team.map((m) => (
-                  <div key={m} className="flex items-center gap-3 p-3 rounded-xl glass-card">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#ff6b5b]/20 to-[#14b8a6]/20 flex items-center justify-center gradient-text text-xs font-semibold">
-                      {m.split(' ').map((n) => n[0]).join('')}
-                    </div>
-                    <span className="text-sm font-medium text-[#1a1a2e]">{m}</span>
-                  </div>
-                ))}
+              <h3 className="text-sm font-semibold text-[#1a1a2e] mb-3" style={display}>Supervisors</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3 mb-6">
+                {supervisors.map((p) => <PersonCard key={p.name} p={p} />)}
               </div>
-              <h3 className="text-sm font-semibold text-[#1a1a2e] mb-2" style={display}>Supervisors</h3>
-              <ul className="text-sm text-[#64748b] space-y-1">
-                {A.supervisors.map((s) => <li key={s}>{s}</li>)}
-              </ul>
+              <h3 className="text-sm font-semibold text-[#1a1a2e] mb-3" style={display}>Advisors and supporters</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3 mb-6">
+                {advisors.map((p) => <PersonCard key={p.name} p={p} />)}
+              </div>
+              <h3 className="text-sm font-semibold text-[#1a1a2e] mb-3" style={display}>Project team</h3>
+              <div className="flex flex-wrap gap-3">
+                {team.map((p) => <TeamChip key={p.name} p={p} />)}
+              </div>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-[#1a1a2e] mb-3" style={display}>With thanks to</h3>
-              <ul className="space-y-3">
-                {A.partners.map((p) => (
-                  <li key={p.name} className="text-sm">
-                    <span className="font-medium text-[#1a1a2e]">{p.name}</span>
-                    <span className="text-[#64748b]"> — {p.role}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {orgs.map((o) => <OrgCard key={o.name} o={o} />)}
+              </div>
             </div>
           </div>
         </Reveal>

@@ -284,19 +284,6 @@ export default function BriquettePage() {
         </div>
       </section>
 
-      {/* ── Videos ── */}
-      {hasVideos && (
-        <Section id="videos" label="Watch" title="The work, sped up">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {Q.videos.map((v) => (
-              <Reveal key={v.id} className={v.short ? '' : 'col-span-2 lg:col-span-1'}>
-                <VideoCard id={v.id} title={v.title} vertical={!!v.short} />
-              </Reveal>
-            ))}
-          </div>
-        </Section>
-      )}
-
       {/* ── Feedstock ── */}
       <Section label="The ingredients" title="Three raw materials, three different fates">
         <Reveal>
@@ -325,6 +312,19 @@ export default function BriquettePage() {
           </div>
         </Reveal>
       </Section>
+
+      {/* ── Videos ── */}
+      {hasVideos && (
+        <Section id="videos" label="Watch" title="The machine at work">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            {Q.videos.map((v) => (
+              <Reveal key={v.id} className={v.short ? '' : 'col-span-2 lg:col-span-1'}>
+                <VideoCard id={v.id} title={v.title} vertical={!!v.short} />
+              </Reveal>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* ── Testing ── */}
       <Section label="Measuring" title="How we tested the energy content">
